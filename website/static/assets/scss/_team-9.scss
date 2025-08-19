@@ -1,0 +1,109 @@
+.team-9 {
+    &__area {
+        background-color: #F8FFF0;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 52px 30px;
+        position: relative;
+        transition: .3s;
+        margin-bottom: -1px;
+        border-top: 1px solid rgb(1 2 5 / 10%);
+        border-bottom: 1px solid rgb(1 2 5 / 10%);
+
+        @media #{$xs} {
+            padding: 45px 10px;
+        }
+
+        &:hover {
+            background-color: #99EA48;
+            border-radius: 30px;
+            border-color: #99EA48;
+
+            & .team-9 {
+                &__author {
+                    img {
+                        opacity: 1;
+                        visibility: visible;
+                        right: 16.4%;
+
+                        @media #{$xs} {
+                            right: 11.4%;
+                        }
+                    }
+                }
+            }
+
+            & .team-9 {
+                &__btn {
+                    a svg {
+                        transform: rotate(45deg);
+                        transition: .3s;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__btn {
+        a svg {
+            transition: .3s;
+        }
+    }
+
+    &__author {
+        img {
+            border-radius: 30px;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            right: 25%;
+            top: -65px;
+            z-index: 1;
+            transition: .4s;
+
+            @media #{$xs} {
+                right: 0;
+            }
+        }
+    }
+
+    &__btn {
+        img {
+            transform: rotate(-45deg);
+            transition: .3s;
+        }
+    }
+
+    &__name {
+        font-size: 36px;
+        color: #010205;
+        font-weight: 600;
+        line-height: 1;
+
+        @media #{$sm} {
+            font-size: 24px;
+        }
+
+        @media #{$xs} {
+            font-size: 16px;
+        }
+    }
+
+    &__position {
+        font-size: 20px;
+        font-weight: 400;
+        color: #696969;
+        line-height: 1;
+        margin-left: -66px;
+
+        @media #{$sm,$xs} {
+            font-size: 16px;
+            margin-left: 0px;
+        }
+    }
+}

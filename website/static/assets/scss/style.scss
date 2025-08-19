@@ -1,0 +1,147 @@
+/*
+Template: Techex - Information & Technology HTML Template
+Author: RRDevs
+Author URI: https://themeforest.net/user/rrdevs
+Description: Information & Technology HTML Template
+Version: 3.0
+*/
+
+// BASIC
+@import 'basic';
+
+// variables
+@import 'variables';
+
+//FONT
+@import './fonts';
+
+// TYPOGRAPHY
+
+@import 'typography';
+
+// MIX
+@import 'mix';
+
+// HELPER
+@import 'helper';
+
+// ICON FONTS
+@import 'icon';
+
+// ANIMATION
+@import 'animation';
+
+// Button 
+@import 'btn';
+
+// Colors 
+@import 'colors';
+
+// Preloader 
+@import 'preloader';
+
+// footer - Section
+@import 'nice-select';
+
+// common - 9--Section
+@import 'common';
+@import 'btn-9';
+@import 'section-title-9';
+@import 'breakpoints';
+
+/* ----------------------------------
+    Template Section Styles
+ ------------------------------------*/
+
+// Menu - Header Section 
+@import 'header';
+
+// Hero Slide - Section 
+@import 'hero';
+
+// Section Title - Heading 
+@import 'section';
+
+// About - Section 
+@import 'about';
+
+// Features - Section 
+@import 'features';
+
+// Features - Section 
+@import 'services';
+
+// Features - Section 
+@import 'testimonial';
+
+// Portfolio - Cases - Section 
+@import 'project';
+
+// Price Table - Section 
+@import 'price';
+
+// Call To Action - Section 
+@import 'cta';
+
+// Content Block - Section 
+@import 'contentblock';
+
+// team - Section 
+@import 'team';
+
+// funfact - Section 
+@import 'funfact';
+
+// Carousel - Section 
+@import 'carousel';
+
+// FAQ - Section 
+@import 'faq';
+
+// solution-business - Section
+@import 'solution-business';
+
+// our-success - Section
+@import 'our-success';
+
+// Blog - Section 
+@import 'blog';
+
+// Contact Us - Section 
+@import 'contact';
+
+// techex-landing-page - Page 
+@import 'techex-landing-page';
+
+//Dark Mode
+@import 'darkmode';
+@import 'darkmode-9';
+@import 'darkmode-10';
+
+// footer - Section 
+@import 'footer';
+// --------------------------------------------------
+@import 'header-9';
+@import 'banner-9';
+@import 'about-9';
+@import 'footer-9';
+@import 'cta-9';
+@import 'testimonial-9';
+@import 'faq-9';
+@import 'project-9';
+@import 'funfact-9';
+@import 'working-process-9';
+@import 'services-9';
+@import 'tab-9';
+@import 'team-9';
+@import 'header-10';
+@import 'banner-10';
+@import 'footer-10';
+@import 'cta-10';
+@import 'blog-10';
+@import 'services-10';
+@import 'pricing-10';
+@import 'testimonial-10';
+@import 'faq-10';
+@import 'about-10';
+@import 'favorite-tools-10';
