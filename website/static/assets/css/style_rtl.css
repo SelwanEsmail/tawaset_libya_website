@@ -10,8 +10,15 @@ Version: 3.0
 body {
   text-align: right;
   direction: rtl;
+ 
 }
-
+.icon-arrow-right-1:befor
+{
+  color: var(--secondary_color);
+}
+ * {
+        font-family: 'Cairo', sans-serif !important;
+    }
 
 
 /* لو عندك قوائم منسدلة */
@@ -19,7 +26,8 @@ body {
 
 :root{
 --main_color : #0A3A6A;
---secondary_color:#F99329
+--secondary_color:#F99329;
+--third-color:#F8F0E5;
 }
 * {
   box-sizing: border-box;
@@ -36,6 +44,11 @@ html {
 html {
   scroll-behavior: smooth;
 }
+.analytics-wrapper .service-element:hover{
+  background-color: var(--secondary_color);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+} 
 
 html, body, div, span, img,
 ol, ul, li, a, p, h1, h2, h3,
@@ -189,35 +202,35 @@ input, textarea, button {
     Template All Variables Defined - Value Change with Your's Need
  -------------------------------------------------------------------- */
 @font-face {
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   src: url("../fonts/CircularStd-MediumItalic.eot");
   src: local("Circular Std Medium Italic"), local("CircularStd-MediumItalic"), url("../fonts/CircularStd-MediumItalic.eot?#iefix") format("embedded-open_type"), url("../fonts/CircularStd-MediumItalic.woff2") format("woff2"), url("../fonts/CircularStd-MediumItalic.woff") format("woff"), url("../fonts/CircularStd-MediumItalic.ttf") format("true_type");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   src: url("../fonts/CircularStd-Black.eot");
   src: local("Circular Std Black"), local("CircularStd-Black"), url("../fonts/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Black.woff2") format("woff2"), url("../fonts/CircularStd-Black.woff") format("woff"), url("../fonts/CircularStd-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   src: url("../fonts/CircularStd-Medium.eot");
   src: local("Circular Std Medium"), local("CircularStd-Medium"), url("../fonts/CircularStd-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Medium.woff2") format("woff2"), url("../fonts/CircularStd-Medium.woff") format("woff"), url("../fonts/CircularStd-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   src: url("../fonts/CircularStd-Bold.eot");
   src: local("Circular Std Bold"), local("CircularStd-Bold"), url("../fonts/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Bold.woff2") format("woff2"), url("../fonts/CircularStd-Bold.woff") format("woff"), url("../fonts/CircularStd-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   src: url("../fonts/CircularStd-BlackItalic.eot");
   src: local("Circular Std Black Italic"), local("CircularStd-BlackItalic"), url("../fonts/CircularStd-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-BlackItalic.woff2") format("woff2"), url("../fonts/CircularStd-BlackItalic.woff") format("woff"), url("../fonts/CircularStd-BlackItalic.ttf") format("truetype");
   font-weight: 900;
@@ -231,7 +244,7 @@ input, textarea, button {
   font-style: italic;
 }
 @font-face {
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   src: url("../fonts/CircularStd-BoldItalic.eot");
   src: local("Circular Std Bold Italic"), local("CircularStd-BoldItalic"), url("../fonts/CircularStd-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-BoldItalic.woff2") format("woff2"), url("../fonts/CircularStd-BoldItalic.woff") format("woff"), url("../fonts/CircularStd-BoldItalic.ttf") format("truetype");
   font-weight: bold;
@@ -5099,7 +5112,7 @@ header.stop .top-header {
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
   font-size: 215px;
-  font-family: "Circular Std";
+font-family: "Cairo", sans-serif;
   font-weight: 900;
   letter-spacing: -0.03em;
   left: -15px;
@@ -5581,7 +5594,7 @@ header.stop .top-header {
 .hero-6 .banner-content h2 {
   font-family: "Nunito", sans-serif;
   font-style: normal;
-  font-weight: 800;
+  /* font-weight: 800; */
   font-size: 64px;
   line-height: 80px;
   color: var(--main_color);
@@ -6624,22 +6637,22 @@ header.stop .top-header {
 }
 .about-wrapper .about-content .text {
   position: relative;
+  /* margin-right: 20px; */
 }
 .about-wrapper .about-content .text p {
   margin-left: 30px;
   margin-bottom: 0;
 }
-.about-wrapper .about-content .text::after {
+/* .about-wrapper .about-content .text::after {
   clear: both;
   transition: all 0.4s ease-in-out;
   bottom: 0;
-  left: 0;
   position: absolute;
   content: "\f058";
   font-family: "Font Awesome 5 Pro";
   color: var(--main_color);
   font-weight: 600;
-}
+} */
 .about-wrapper .about-content .theme-btn:not(.style-1):hover {
   border-color: #FFF;
 }
@@ -7495,7 +7508,7 @@ header.stop .top-header {
   position: relative;
   padding-left: 25px;
 }
-.service__wrapper .service-content .supports p::after {
+/* .service__wrapper .service-content .supports p::after {
   clear: both;
   transition: all 0.4s ease-in-out;
   bottom: 0;
@@ -7505,7 +7518,7 @@ header.stop .top-header {
   font-family: "Font Awesome 5 Pro";
   color: rgb(8, 106, 215);
   font-weight: 600;
-}
+} */
 .service__wrapper .service-content .progress {
   height: 20px;
   border-radius: 999px;
@@ -9552,7 +9565,7 @@ header.stop .top-header {
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
-  background-color: var(--main_color);
+  background-color: var(--secondary_color);
 }
 @media (max-width: 1199px) {
   .cta-banner.style-3 .container-fluid {
@@ -11766,10 +11779,13 @@ header.stop .top-header {
   }
 }
 .single-blog-card.style-3 .content .btn-link-share a {
+  border-radius: 18px;
+    padding: 12px;
+    background-color: var(--main_color);
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  color: var(--main_color);
+  color: white;
   text-transform: uppercase;
 }
 .single-blog-card.style-3 .content .btn-link-share a:first-child i {
@@ -11777,10 +11793,10 @@ header.stop .top-header {
 }
 .single-blog-card.style-3 .content .btn-link-share a:last-child {
   margin: 0;
-  color: rgba(33, 30, 59, 0.3);
+  color: rgba(33, 30, 59, 0.3);;
 }
 .single-blog-card.style-3 .content .btn-link-share a:hover {
-  color: var(--main_color) !important;
+  color: var(--third-color) !important;
 }
 .single-blog-card.style-3:hover .content:before {
   height: 100%;
@@ -11789,6 +11805,7 @@ header.stop .top-header {
   position: absolute;
   top: 10px;
   left: 10px;
+ 
 }
 .single-blog-card .future-elem p {
   font-family: "Circular Std", sans-serif;
@@ -11798,7 +11815,7 @@ header.stop .top-header {
   line-height: 100%;
   color: #FFF;
   padding: 8px 16px;
-  background: var(--main_color);
+  background: var(--secondary_color);
   border-radius: 6px;
 }
 .single-blog-card .blog-featured-thumb {
@@ -13140,7 +13157,7 @@ header.stop .top-header {
 }
 .contact_form__wrapper .contact__element input[type=submit] {
   height: 50px;
-  background-color: var(--main_color);
+  background-color: var(--secondary_color);
   color: #FFF;
   margin: 10px;
   -webkit-transition: all 0.4s ease-in-out;

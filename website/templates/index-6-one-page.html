@@ -29,6 +29,9 @@
 
 <!-- ===========  All Stylesheet ================= -->
 <!--  Icon css plugins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Emblema+One&family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
 <!--  animate css plugins -->
 <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
@@ -142,9 +145,9 @@
                     <div class="col-md-7">
                         <div class="header-cta">
                             <ul>
-                                <li><a href="#"><i class="icon-location-dot"></i>55 Clark St, Brooklyn, NY 11201, USA</a></li>
-                                <li><a href="mailto:techex@gmail.com"><i class="fal fa-envelope"></i>techex@gmail.com</a></li>
-                                <li><a href="tel:+8801700080702"><i class="fal fa-phone"></i>+ 88 ( 9800 ) 6802</a></li>
+                                <li><a href="#"><i class="icon-location-dot"></i>شارع عمر المختار، طرابلس، ليبيا</a></li>
+                                <li><a href="mailto:techex@gmail.com"><i class="fal fa-envelope"></i>info@tawasot.ly</a></li>
+                                <li><a href="tel:+8801700080702"><i class="fal fa-phone"></i>+21891 1234567</a></li>
                               </ul>
                         </div>
                     </div>
@@ -193,7 +196,7 @@
                     <div class="header-logo">
                      <div class="logo">
                             <a href="">
-                                <img src="{% static 'img/logo.png' %}" alt="logo">
+                                <img src="{% static 'logo_short.png' %}" alt="logo">
                             </a>
                         </div>
 
@@ -207,11 +210,11 @@
                         <div class="main-menu">
                             <ul>
                                <li><a href="#home">{% trans "Home" %}</a></li>
-                                <li><a href="#about-us">{% trans "About Us" %}</a></li>
+                                <li><a href="#about-us">{% trans "About " %}</a></li>
                                 <li><a href="#services">{% trans "Services" %}</a></li>
-                                <li><a href="#pricing">{% trans "Pricing" %}</a></li>
-                                <li><a href="#testimonial">{% trans "Testimonial" %}</a></li>
-                                <li><a href="#blog">{% trans "Blog" %}</a></li>
+                                <li><a href="#pricing">{% trans "Projects" %}</a></li>
+                                <li><a href="#testimonial">{% trans "why us" %}</a></li>
+                                <li><a href="#blog">{% trans "Contact" %}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -274,9 +277,11 @@
             <div class="row align-items-center">
                 <div class="col-md-12 col-lg-6">
                     <div class="banner-content">
-                        <h2 data-aos="fade-up">Provide Best It <br> Services For Your <br> Business</h2>
+                        <h2 data-aos="fade-up">شركة تواسط ليبيا للحلول والخدمات التقنية
+</h2>
                         <span>tawasot</span>
-                        <a data-aos="fade-up" data-aos-delay="100" href="contact.html" class="theme-btn mt-40">Discover More <i class="icon-arrow-right-1"></i></a>
+                        
+                        {% comment %} <a data-aos="fade-up" data-aos-delay="100" href="contact.html" class="theme-btn mt-40">Discover More <i class="icon-arrow-right-1"></i></a> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
@@ -335,15 +340,19 @@
                 <div class="col-md-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="section-title section__title_3 mb-30">
                         <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>What we do</h6>
-                        <h2>Digital data consulting for your Business Growth</h2>
+                        <h2>تحليلات رقمية واستشارات تقنية تدفع بنمو أعمالك</h2>
                     </div>
                     <div class="about-content">
-                        <p>Sed ut perspiciatis unde omnis natus error sity voluptatem accusa ntium doloremque laudantie totam rem aperiamea queipsa quae abillonven tore veritatis.</p>
+                        <p>في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات.
+نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح.</p>
                         <div class="text">
-                            <p>In Database Optimized Algorithms</p>
+                            <p>خوارزميات ذكية لتحليل البيانات وتحسين الأداء</p>
                         </div>
                         <div class="text">
-                            <p>Access any data Flexible and easily</p>
+                            <p>الوصول السلس والآمن لأي معلومة في أي وقت</p>
+                        </div>
+                        <div class="text">
+                            <p>استشارات احترافية تساعدك على اتخاذ القرار بثقة</p>
                         </div>
                         <a href="#" class="theme-btn mt-40">Know us more <i class="icon-arrow-right-1"></i></a>
                     </div>
@@ -358,42 +367,52 @@
     <section class="analytics-wrapper section-padding-3 bg-center bg-cover" style="background-image: url('{% static 'assets/img/home5/service_bg.png' %}');">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-xl-6 col-md-6 offset-md-3 text-center">
+                <div class="col-12 col-xl-12 col-md-12 offset-md-3 text-center">
                     <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
-                        <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>Our Services</h6>
-                        <h2>Our Proposition Data Science and Analytics Services</h2>
+                        {% comment %} <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>خدماتنا</h6> {% endcomment %}
+                        <h2>خدماتنا</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-element text-center">
                         <div class="icon">
                             <img src="{% static 'assets/img/home5/eng_01.png' %}" alt="">
                         </div>
-                        <h4>Product Engineering</h4>
-                        <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
-                        <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <h4>انظمة Erp</h4>
+                        {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
+                        {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="150">
                     <div class="service-element text-center">
                         <div class="icon">
                            <img src="{% static 'assets/img/home5/eng_02.png' %}" alt="">
                         </div>
-                        <h4>Data Analysis</h4>
-                        <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
-                        <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <h4>الحوسبة السحابية</h4>
+                        {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
+                        {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-element text-center">
                         <div class="icon">
                             <img src="{% static 'assets/img/home5/eng_03.png' %}" alt>
                         </div>
-                        <h4>UX/UI Strategy</h4>
-                        <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
-                        <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <h4>الامن السيبراني</h4>
+                        {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
+                        {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-element text-center">
+                        <div class="icon">
+                            <img src="{% static 'assets/img/home5/eng_03.png' %}" alt>
+                        </div>
+                        <h4>  بناء الانظمة </h4>
+                        {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
+                        {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -555,32 +574,19 @@
                             <img src="{% static 'assets/img/home5/bage.svg' %}" alt="">
                             Our working process
                         </h6>
-                        <h2>We Follow 3 steps to Grow Business</h2>
+                        <h2>نحن في تواسط ليبيا، نبني مستقبل التقنية بخطى واثقة</h2>
                     </div>
                     <div class="service-content">
-                        <p>Sed ut perspiciatis unde omnis natus error sity voluptatem accusa ntium doloremque laudantie totam rem aperiamea queipsa quae abillonven tore veritatis.</p>
-                        <div class="supports d-flex align-items-center">
-                            <p>24/7 hours Support</p>
-                            <p class="ml-50">Flexible and easily</p>
+                            <p>
+                                في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو أعمالك وتطورها.
+نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو المستقبل.
+                            </p>
+                        <div class="supports">
+                            <p>سهولة في التعامل</p><br>
+                            <p> تنفيذ احترافي بمعايير عالمية</p><br>
+                            <p class="">دعم فني متواصل 24/7</p>
                         </div>
-                        <div class="single-skill-bar">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4>Technology</h4>
-                                <span>79%</span>
-                            </div>
-                            <div class="progress d-flex align-items-center">
-                                <div class="progress-bar" style="width: 79%"></div>
-                            </div>
-                        </div>
-                        <div class="single-skill-bar">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4>Solutions</h4>
-                                <span>69%</span>
-                            </div>
-                            <div class="progress d-flex align-items-center">
-                                <div class="progress-bar" style="width: 69%"></div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -619,28 +625,32 @@
                 <div class="col-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact__element">
                         <div class="section-title section__title_3 mb-30">
-                            <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>Let's Talk With Us</h6>
-                            <h2>Free Consultation</h2>
+                            <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>تواصل معنا</h6>
+                            <h2>احجز استشارتك الان</h2>
                         </div>
                         <form action="#">
-                            <input type="text" name="text" class="form-control" placeholder="Full Name">
-                            <input type="email" name="email" class="form-control" placeholder="Email Address">
-                            <textarea name="text" class="form-control" placeholder="Your Message"></textarea>
-                            <input type="submit" class="form-control" value="Free Consultation">
+                            <input type="text" name="text" class="form-control" placeholder="الاسم بالكامل ">
+                            <input type="email" name="email" class="form-control" placeholder="البريد الالكتروني">
+                            <textarea name="text" class="form-control" placeholder=" رسالتك"></textarea>
+                            <input type="submit" class="form-control" value="ارسال ">
                         </form>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact__detels">
-                        <h2>Don’t Hesitate To Contact With Us, We’ve Very Friendly </h2>
-                        <p>Sed ut perspiciatis unde omnis natus error sity voluptatem accusa ntium doloremque laudantie totam rem aperiamea queipsa quae abillonven tore veritatis.</p>
+                        <h2>لا تتردد في التواصل معنا — فريقنا هنا لخدمتك </h2>
+                        <p>
+                            سواء كنت تبحث عن حل تقني متكامل، أو تحتاج إلى استشارة سريعة،
+نحن في تواسط ليبيا جاهزون لسماعك والإجابة على استفساراتك في أي وقت.
+اتصل بنا، ودعنا نساعدك على بناء مستقبل رقمي أقوى.
+                        </p>
                         <div class="action__call d-flex">
                             <div class="icon">
                                 <img src="{% static 'assets/img/home5/phone.svg' %}" alt="">
                             </div>
                             <div class="content ml-20">
-                                <p>Call Any Time</p>
-                                <h4>+254 (487) 25654</h4>
+                                <p>متواجدون دائماً لخدمتك على الرقم</p>
+                                <h4>091 1234567</h4>
                             </div>
                         </div>
                     </div>
@@ -652,7 +662,7 @@
         </div>
     </section>
 
-    <section id="testimonial" class="agent__wrapper section-padding-3 bg-center bg-cover" style="background-image: url(./assets/img/home5/bg_01.png);">
+    {% comment %} <section id="testimonial" class="agent__wrapper section-padding-3 bg-center bg-cover" style="background-image: url(./assets/img/home5/bg_01.png);">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-5">
@@ -724,7 +734,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> {% endcomment %}
 <!-------------------------- Packaging------------------------------->
     {% comment %} <section id="pricing" class="price__wrapper section-padding-3">
         <div class="container">
@@ -828,10 +838,10 @@
     <section id="blog" class="blog-section blog-wrapper section-padding-3 bg-cover bg-center" style="background-image: url(./assets/img/home5/blog_bg_line.svg);">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-xl-6 col-md-6 offset-md-3 text-center">
+                <div class="col-12 col-xl-12 col-md-12 offset-md-3 text-center">
                     <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
-                        <h6><img src="assets/img/home5/bage.svg" alt>ARTICLES & TIPES</h6>
-                        <h2>Get Every Single Updates</h2>
+                        {% comment %} <h6><img src="assets/img/home5/bage.svg" alt>ARTICLES & TIPES</h6> {% endcomment %}
+                        <h2>أخر الأخبار   </h2>
                     </div>
                 </div>
             </div>
@@ -845,16 +855,16 @@
                                 <div class="post-date">
                                     <a href="#"><i class="fal fa-calendar-alt"></i>18 Jan 2022</a>
                                 </div>
-                                <div class="post-comment">
+                                {% comment %} <div class="post-comment">
                                     <a href="#"><i class="icon-message"></i>02 Comments</a>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                             <h3><a href="news-details.html">Web Development</a></h3>
                             <div class="excerpt">
                                 <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
                             </div>
                             <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a href="news-details.html">read more <i class="icon-arrow-right-1"></i></a>
+                                <a href="news-details.html">قراءة المزيد <i class="icon-arrow-right-1"></i></a>
                                 <a href="#"><i class="fal fa-share-alt"></i></a>
                             </div>
                             
@@ -874,7 +884,7 @@
                                     <a href="#"><i class="fal fa-calendar-alt"></i>18 Jan 2022</a>
                                 </div>
                                 <div class="post-comment">
-                                    <a href="#"><i class="icon-message"></i>02 Comments</a>
+                                    {% comment %} <a href="#"><i class="icon-message"></i>02 Comments</a> {% endcomment %}
                                 </div>
                             </div>
                             <h3><a href="news-details.html">Web Development</a></h3>
@@ -882,7 +892,7 @@
                                 <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
                             </div>
                             <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a href="news-details.html">read more <i class="icon-arrow-right-1"></i></a>
+                                <a href="news-details.html">قراءة المزيد <i class="icon-arrow-right-1"></i></a>
                                 <a href="#"><i class="fal fa-share-alt"></i></a>
                             </div>
                         </div>
@@ -901,7 +911,7 @@
                                     <a href="#"><i class="fal fa-calendar-alt"></i>18 Jan 2022</a>
                                 </div>
                                 <div class="post-comment">
-                                    <a href="#"><i class="icon-message"></i>02 Comments</a>
+                                    {% comment %} <a href="#"><i class="icon-message"></i>02 Comments</a> {% endcomment %}
                                 </div>
                             </div>
                             <h3><a href="news-details.html">Web Development</a></h3>
@@ -909,7 +919,7 @@
                                 <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
                             </div>
                             <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a href="news-details.html">read more <i class="icon-arrow-right-1"></i></a>
+                                <a href="news-details.html">قراءة المزيد <i class="icon-arrow-right-1"></i></a>
                                 <a href="#"><i class="fal fa-share-alt"></i></a>
                             </div>
                         </div>
@@ -927,12 +937,14 @@
             <div class="cta-content">
                 <div class="row align-items-center">
                     <div class="col-xl-7 text-white col-12 text-center text-xl-left">
-                        <h1>Ready To Get Free Consulations For <br> Any Kind Of It Solutions ? </h1>
+                        <h1>
+                            لا تضيع وقتك في الحلول العشوائية، دع خبراء تواسط ليبيا يرشدونك.
+                        </h1>
                     </div>
                     <div class="col-xl-5 col-12">
                         <div class="btn-wraper d-flex flex-wrap justify-content-xl-end mt-2 mt-md-4 mt-xl-0">
                             <a href="contact.html" class="theme-btn">Get a quote <i class="icon-arrow-right-1"></i></a>
-                            <a href="services-details.html" class="theme-btn">read more <i class="icon-arrow-right-1"></i></a>
+                            <a href="services-details.html" class="theme-btn">قراءة المزيد <i class="icon-arrow-right-1" dt></i></a>
                         </div>
                     </div>
                 </div>

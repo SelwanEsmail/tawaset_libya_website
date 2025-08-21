@@ -8,19 +8,27 @@ Version: 3.0
 
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
 
-
-
+.analytics-wrapper .service-element:hover{
+  background-color: var(--secondary_color);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+} 
+.icon-arrow-right-1:befor{
+  color: var(--secondary_color);
+}
 /* لو عندك قوائم منسدلة */
 .is-rtl .dropdown-menu { right: 0; left: auto; }
 
 :root{
 --main_color : #0A3A6A;
---secondary_color:#F99329
+--secondary_color:#F99329;
+--third-color:#F8F0E5;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+ font-family: "Cairo", sans-serif;
   
 }
 
@@ -7491,17 +7499,7 @@ header.stop .top-header {
   position: relative;
   padding-left: 25px;
 }
-.service__wrapper .service-content .supports p::after {
-  clear: both;
-  transition: all 0.4s ease-in-out;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  content: "\f058";
-  font-family: "Font Awesome 5 Pro";
-  color: rgb(8, 106, 215);
-  font-weight: 600;
-}
+
 .service__wrapper .service-content .progress {
   height: 20px;
   border-radius: 999px;
@@ -11762,10 +11760,13 @@ header.stop .top-header {
   }
 }
 .single-blog-card.style-3 .content .btn-link-share a {
+  border-radius: 18px;
+    padding: 12px;
+    background-color: var(--main_color);
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  color: var(--main_color);
+  color: white;
   text-transform: uppercase;
 }
 .single-blog-card.style-3 .content .btn-link-share a:first-child i {
@@ -11776,7 +11777,7 @@ header.stop .top-header {
   color: rgba(33, 30, 59, 0.3);
 }
 .single-blog-card.style-3 .content .btn-link-share a:hover {
-  color: var(--main_color) !important;
+  color: var(--third-color) !important;
 }
 .single-blog-card.style-3:hover .content:before {
   height: 100%;
@@ -11794,7 +11795,7 @@ header.stop .top-header {
   line-height: 100%;
   color: #FFF;
   padding: 8px 16px;
-  background: var(--main_color);
+  background: var(--secondary_color);
   border-radius: 6px;
 }
 .single-blog-card .blog-featured-thumb {
@@ -13136,7 +13137,7 @@ header.stop .top-header {
 }
 .contact_form__wrapper .contact__element input[type=submit] {
   height: 50px;
-  background-color: var(--main_color);
+  background-color: var(--secondary_color);
   color: #FFF;
   margin: 10px;
   -webkit-transition: all 0.4s ease-in-out;

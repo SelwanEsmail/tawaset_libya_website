@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 
+from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,9 +38,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    
     'website',
     'modeltranslation',
+    "unfold",  # before django.contrib.admin
+    "unfold.contrib.filters",  # optional, if special filters are needed
+    "unfold.contrib.forms",  # optional, if special form elements are needed
+    "unfold.contrib.inlines",  # optional, if special inlines are needed
+    "unfold.contrib.import_export",  # optional, if django-import-export package is used
+    "unfold.contrib.guardian",  # optional, if django-guardian package is used
+    "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
+    "unfold.contrib.location_field",  # optional, if django-location-field package is used
+    "unfold.contrib.constance",  # optional, if django-constance package is used
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -212,4 +224,87 @@ CKEDITOR_CONFIGS = {
         'filebrowserWindowWidth': 940,
         'filebrowserWindowHeight': 725,
     }
+}
+
+UNFOLD = {
+    "SITE_TITLE": "Custom suffix in <title> tag",
+    "SITE_HEADER": "Appears in sidebar at the top",
+    "SITE_SUBHEADER": "Appears under SITE_HEADER",
+    "SITE_DROPDOWN": [
+        {
+            "icon": "diamond",
+            "title": _("My site"),
+            "link": "https://example.com",
+        },
+        # ...
+    ],
+    "SITE_URL": "/",
+    # "SITE_ICON": lambda request: static("icon.svg"),  # both modes, optimise for 32px height
+    "SITE_ICON": {
+        "light": lambda request: static("logo.png"),  # light mode
+        "dark": lambda request: static("logo.png"),  # dark mode
+    },
+    # "SITE_LOGO": lambda request: static("logo.svg"),  # both modes, optimise for 32px height
+    "SITE_LOGO": {
+        "light": lambda request: static("logo.png"),  # light mode
+        "dark": lambda request: static("logo.png"),  # dark mode
+    },
+    
+     "COLORS": {
+        "base": {
+             "50":  "246, 238, 232",     # أقرب للبرتقالي الفاتح
+            "100": "233, 217, 210",
+            "200": "212, 185, 174",
+            "300": "178, 149, 137",
+            "400": "144, 113, 100",
+            "500": "112, 86, 77",       # منتصف بين الأزرق والبرتقالي
+            "600": "86, 70, 74",
+            "700": "62, 53, 71",
+            "800": "40, 36, 65",
+            "900": "20, 20, 56",
+            "950": "10, 10, 40",        
+        },
+     "primary": {
+    "50":  "246, 238, 232",     # أقرب للبرتقالي الفاتح
+    "100": "233, 217, 210",
+    "200": "212, 185, 174",
+    "300": "178, 149, 137",
+    "400": "144, 113, 100",
+    "500": "112, 86, 77",       # منتصف بين الأزرق والبرتقالي
+    "600": "86, 70, 74",
+    "700": "62, 53, 71",
+    "800": "40, 36, 65",
+    "900": "20, 20, 56",
+    "950": "10, 10, 40",        # قريب من الأزرق الداكن جداً
+},
+        "accent": {
+            "50": "255, 245, 230",
+            "100": "255, 235, 204",
+            "200": "254, 216, 165",
+            "300": "253, 197, 126",
+            "400": "252, 178, 87",
+            "500": "249, 147, 41",       # #F99329
+            "600": "214, 125, 34",
+            "700": "179, 104, 28",
+            "800": "143, 83, 22",
+            "900": "108, 63, 16",
+            "950": "72, 42, 10",
+        },
+        "font": {
+            "subtle-light": "var(--color-base-500)",  # text-base-500
+            "subtle-dark": "var(--color-base-400)",  # text-base-400
+            "default-light": "var(--color-base-600)",  # text-base-600
+            "default-dark": "var(--color-base-300)",  # text-base-300
+            "important-light": "var(--color-base-900)",  # text-base-900
+            "important-dark": "var(--color-base-100)",  # text-base-100
+        },
+    },
+     "SIDEBAR": {
+        "show_search": False,  # Search in applications and models names
+        "command_search": False,  # Replace the sidebar search with the command search
+        "show_all_applications": False,  # Dropdown with all applications and models
+        
+    },
+    
+   
 }
