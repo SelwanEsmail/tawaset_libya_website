@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-19 11:43+0200\n"
+"POT-Creation-Date: 2025-08-24 12:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,26 +19,262 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\website\templates\index-6-one-page.html:187
+#: .\tawasul_libya_site\settings.py:236
+msgid "My site"
+msgstr ""
+
+#: .\website\templates\index-6-one-page.html:155
+msgid "شارع عمر المختار، طرابلس، ليبيا"
+msgstr "شارع عمر المختار، طرابلس، ليبيا"
+
+#: .\website\templates\index-6-one-page.html:220
+#: .\website\templates\index-6-one-page.html:259
 msgid "Home"
 msgstr "الرئيسية"
 
-#: .\website\templates\index-6-one-page.html:188
-msgid "About Us"
+
+
+
+#: .\website\templates\index-6-one-page.html:221
+#: .\website\templates\index-6-one-page.html:217
+#, fuzzy
+#| msgid "About Us"
+msgid "About"
 msgstr "من نحن"
 
-#: .\website\templates\index-6-one-page.html:189
+#: .\website\templates\index-6-one-page.html:222
+msgid "news"
+msgstr "أخبار"
+
+#: .\website\templates\index-6-one-page.html:223
+msgid "Projects"
+msgstr "مشاريع"
+
+#: .\website\templates\index-6-one-page.html:224
+msgid "why us"
+msgstr "لماذا نحن"
+
+#: .\website\templates\index-6-one-page.html:225
+msgid "Contact"
+msgstr "تواصل"
+
+#: .\website\templates\index-6-one-page.html:260
+#: .\website\templates\index-6-one-page.html:1026
+#: .\website\templates\index-6-one-page.html:1042
+#, fuzzy
+#| msgid "About Us"
+msgid "About Us"
+msgstr "من نحن"
+#: .\website\templates\index-6-one-page.html:261
 msgid "Services"
-msgstr ""
+msgstr "خدماتنا"
 
-#: .\website\templates\index-6-one-page.html:190
+#: .\website\templates\index-6-one-page.html:262
 msgid "Pricing"
-msgstr ""
+msgstr "الأسعار"
 
-#: .\website\templates\index-6-one-page.html:191
+#: .\website\templates\index-6-one-page.html:263
 msgid "Testimonial"
-msgstr ""
+msgstr "آراء العملاء"
 
-#: .\website\templates\index-6-one-page.html:192
+#: .\website\templates\index-6-one-page.html:264
 msgid "Blog"
+msgstr "المدونة"
+
+#: .\website\templates\index-6-one-page.html:269
+msgid "55 Clark St, Brooklyn, NY 11201, USA"
+msgstr "55 شارع كلارك، بروكلين، نيويورك 11201، الولايات المتحدة الأمريكية"
+
+#: .\website\templates\index-6-one-page.html:272
+msgid "Consultancy"
+msgstr "استشارات"
+
+#: .\website\templates\index-6-one-page.html:290
+msgid "شركة تواسط ليبيا للحلول والخدمات التقنية"
+msgstr "شركة تواسط ليبيا للحلول والخدمات التقنية"
+
+#: .\website\templates\index-6-one-page.html:354
+msgid "تحليلات رقمية واستشارات تقنية تدفع بنمو أعمالك"
+msgstr "تحليلات رقمية واستشارات تقنية تدفع بنمو أعمالك"
+
+#: .\website\templates\index-6-one-page.html:359
+msgid ""
+"في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال "
+"حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات. "
+"نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح."
 msgstr ""
+"في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال "
+"حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات. "
+"نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح."
+
+#: .\website\templates\index-6-one-page.html:363
+msgid "خوارزميات ذكية لتحليل البيانات وتحسين الأداء"
+msgstr "خوارزميات ذكية لتحليل البيانات وتحسين الأداء"
+
+#: .\website\templates\index-6-one-page.html:366
+msgid "الوصول السلس والآمن لأي معلومة في أي وقت"
+msgstr "الوصول السلس والآمن لأي معلومة في أي وقت"
+
+#: .\website\templates\index-6-one-page.html:373
+msgid "استشارات احترافية تساعدك على اتخاذ القرار بثقة"
+msgstr "استشارات احترافية تساعدك على اتخاذ القرار بثقة"
+
+#: .\website\templates\index-6-one-page.html:606
+msgid "Our working process"
+msgstr "منهجية عملنا"
+
+#: .\website\templates\index-6-one-page.html:608
+msgid "نحن في تواسط ليبيا، نبني مستقبل التقنية بخطى واثقة"
+msgstr "نحن في تواسط ليبيا، نبني مستقبل التقنية بخطى واثقة"
+
+#: .\website\templates\index-6-one-page.html:614
+msgid ""
+"في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو "
+"أعمالك وتطورها. نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن "
+"السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو "
+"المستقبل."
+msgstr ""
+"في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو "
+"أعمالك وتطورها. نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن "
+"السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو "
+"المستقبل."
+
+#: .\website\templates\index-6-one-page.html:617
+msgid "سهولة في التعامل"
+msgstr "سهولة في التعامل"
+
+#: .\website\templates\index-6-one-page.html:618
+msgid "تنفيذ احترافي بمعايير عالمية"
+msgstr "تنفيذ احترافي بمعايير عالمية"
+
+#: .\website\templates\index-6-one-page.html:619
+msgid "دعم فني متواصل 24/7"
+msgstr "دعم فني متواصل 24/7"
+
+#: .\website\templates\index-6-one-page.html:637
+msgid "Project Completed"
+msgstr "مشروع مكتمل"
+
+#: .\website\templates\index-6-one-page.html:641
+msgid "Expert Consultants"
+msgstr "مستشارون خبراء"
+
+#: .\website\templates\index-6-one-page.html:645
+msgid "5 Stars Rating"
+msgstr "تقييم 5 نجوم"
+
+#: .\website\templates\index-6-one-page.html:649
+msgid "Awards Winning"
+msgstr "جوائز فائزة"
+
+#: .\website\templates\index-6-one-page.html:663
+msgid "تواصل معنا"
+msgstr "تواصل معنا"
+
+#: .\website\templates\index-6-one-page.html:664
+msgid "احجز استشارتك الان"
+msgstr "احجز استشارتك الان"
+
+#: .\website\templates\index-6-one-page.html:667
+msgid "الاسم بالكامل"
+msgstr "الاسم بالكامل"
+
+#: .\website\templates\index-6-one-page.html:668
+msgid "البريد الالكتروني"
+msgstr "البريد الالكتروني"
+
+#: .\website\templates\index-6-one-page.html:669
+msgid "رسالتك"
+msgstr "رسالتك"
+
+#: .\website\templates\index-6-one-page.html:670
+msgid "ارسال"
+msgstr "ارسال"
+
+#: .\website\templates\index-6-one-page.html:678
+msgid "لا تتردد في التواصل معنا — فريقنا هنا لخدمتك"
+msgstr "لا تتردد في التواصل معنا — فريقنا هنا لخدمتك"
+
+#: .\website\templates\index-6-one-page.html:680
+msgid ""
+"سواء كنت تبحث عن حل تقني متكامل، أو تحتاج إلى استشارة سريعة، نحن في تواسط "
+"ليبيا جاهزون لسماعك والإجابة على استفساراتك في أي وقت. اتصل بنا، ودعنا "
+"نساعدك على بناء مستقبل رقمي أقوى."
+msgstr ""
+"سواء كنت تبحث عن حل تقني متكامل، أو تحتاج إلى استشارة سريعة، نحن في تواسط "
+"ليبيا جاهزون لسماعك والإجابة على استفساراتك في أي وقت. اتصل بنا، ودعنا "
+"نساعدك على بناء مستقبل رقمي أقوى."
+
+#: .\website\templates\index-6-one-page.html:691
+msgid "متواجدون دائماً لخدمتك على الرقم"
+msgstr "متواجدون دائماً لخدمتك على الرقم"
+
+#: .\website\templates\index-6-one-page.html:886
+msgid "أخر الأخبار"
+msgstr "أخر الأخبار"
+
+#: .\website\templates\index-6-one-page.html:988
+msgid "لا تضيع وقتك في الحلول العشوائية، دع خبراء تواسط ليبيا يرشدونك."
+msgstr "لا تضيع وقتك في الحلول العشوائية، دع خبراء تواسط ليبيا يرشدونك."
+
+#: .\website\templates\index-6-one-page.html:993
+msgid "Get a quote"
+msgstr "طلب عرض سعر"
+
+#: .\website\templates\index-6-one-page.html:994
+msgid "قراءة المزيد"
+msgstr "قراءة المزيد"
+
+#: .\website\templates\index-6-one-page.html:1011
+msgid ""
+"Sed ut perspiciatis unde omnis natus voluptatem accusa ntiumy doloremque "
+"laudantium.omnis natus voluptatem accusa ntiumy doloremque laudantium"
+msgstr "هذا النص هو مثال فقط، سيتم استبداله بنص يصف شركتكم ورؤيتها. نص طويل يوضح اهداف الشركة وسياستها وتفاصيل اكثر عن خدماتها."
+
+#: .\website\templates\index-6-one-page.html:1023
+msgid "Company"
+msgstr "الشركة"
+
+#: .\website\templates\index-6-one-page.html:1027
+#: .\website\templates\index-6-one-page.html:1043
+msgid "Company History"
+msgstr "تاريخ الشركة"
+
+#: .\website\templates\index-6-one-page.html:1028
+#: .\website\templates\index-6-one-page.html:1044
+msgid "Need a Career"
+msgstr "وظائف شاغرة"
+
+#: .\website\templates\index-6-one-page.html:1029
+#: .\website\templates\index-6-one-page.html:1045
+msgid "Working Process"
+msgstr "منهجية العمل"
+
+#: .\website\templates\index-6-one-page.html:1030
+#: .\website\templates\index-6-one-page.html:1046
+msgid "Blog Post"
+msgstr "المدونة"
+
+#: .\website\templates\index-6-one-page.html:1039
+msgid "Useful Link"
+msgstr "روابط مفيدة"
+
+#: .\website\templates\index-6-one-page.html:1054
+msgid "News & Article"
+msgstr "الأخبار والمقالات"
+
+#: .\website\templates\index-6-one-page.html:1060
+msgid "24th Nov 2020"
+msgstr "24 نوفمبر 2020"
+
+#: .\website\templates\index-6-one-page.html:1061
+msgid "User’s Perspes Using Story Structure"
+msgstr "وجهات نظر المستخدمين باستخدام بنية القصة"
+
+#: .\website\templates\index-6-one-page.html:1067
+msgid "15th July 2023"
+msgstr "15 يوليو 2023"
+
+#: .\website\templates\index-6-one-page.html:1068
+msgid "Optimiz For Assistive Technology Users"
+msgstr "التحسين لمستخدمي التكنولوجيا المساعدة"

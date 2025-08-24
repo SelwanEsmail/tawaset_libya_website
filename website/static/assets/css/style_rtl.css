@@ -7,18 +7,19 @@ Version: 3.0
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
-body {
+body,p,h1mh1,h3,h4,h5,h6 {
   text-align: right;
   direction: rtl;
+  font-family: 'Cairo', sans-serif !important;
  
+}
+h2{
+  letter-spacing: 0 !important;
 }
 .icon-arrow-right-1:befor
 {
   color: var(--secondary_color);
 }
- * {
-        font-family: 'Cairo', sans-serif !important;
-    }
 
 
 /* لو عندك قوائم منسدلة */
@@ -6643,16 +6644,17 @@ font-family: "Cairo", sans-serif;
   margin-left: 30px;
   margin-bottom: 0;
 }
-/* .about-wrapper .about-content .text::after {
+.about-wrapper .about-content .text::after {
   clear: both;
   transition: all 0.4s ease-in-out;
   bottom: 0;
   position: absolute;
+  right: -22px;
   content: "\f058";
   font-family: "Font Awesome 5 Pro";
-  color: var(--main_color);
+  color: var(--secondary_color);
   font-weight: 600;
-} */
+}
 .about-wrapper .about-content .theme-btn:not(.style-1):hover {
   border-color: #FFF;
 }

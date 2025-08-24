@@ -31,10 +31,13 @@ Version: 3.0
  font-family: "Cairo", sans-serif;
   
 }
-
+.fa-check-circle:before {
+  color: var(--secondary_color) !important;
+}
 body,
 html {
   height: 100%;
+  
 }
 
 html {
@@ -6641,7 +6644,7 @@ header.stop .top-header {
   position: absolute;
   content: "\f058";
   font-family: "Font Awesome 5 Pro";
-  color: var(--main_color);
+  color: var(--secondary_color);
   font-weight: 600;
 }
 .about-wrapper .about-content .theme-btn:not(.style-1):hover {

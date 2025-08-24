@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-19 11:43+0200\n"
+"POT-Creation-Date: 2025-08-24 12:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,29 +18,248 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\website\templates\index-6-one-page.html:187
+#: .\tawasul_libya_site\settings.py:236
+msgid "My site"
+msgstr "My site"
+
+#: .\website\templates\index-6-one-page.html:155
+msgid "شارع عمر المختار، طرابلس، ليبيا"
+msgstr "Omar Al-Mokhtar Street, Tripoli, Libya"
+
+#: .\website\templates\index-6-one-page.html:220
+#: .\website\templates\index-6-one-page.html:259
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
-#: .\website\templates\index-6-one-page.html:188
+#: .\website\templates\index-6-one-page.html:221
+#, fuzzy
+#| msgid "About "
+msgid "About"
+msgstr "About"
+
+#: .\website\templates\index-6-one-page.html:222
+msgid "news"
+msgstr "News"
+
+#: .\website\templates\index-6-one-page.html:223
+msgid "Projects"
+msgstr "Projects"
+
+#: .\website\templates\index-6-one-page.html:224
+msgid "why us"
+msgstr "Why us"
+
+#: .\website\templates\index-6-one-page.html:225
+msgid "Contact"
+msgstr "Contact"
+
+#: .\website\templates\index-6-one-page.html:260
+#: .\website\templates\index-6-one-page.html:1026
+#: .\website\templates\index-6-one-page.html:1042
+#, fuzzy
+#| msgid "About "
 msgid "About Us"
-msgstr ""
-
-#: .\website\templates\index-6-one-page.html:189
+msgstr "About"
+#: .\website\templates\index-6-one-page.html:261
 msgid "Services"
-msgstr ""
+msgstr "Services"
 
-#: .\website\templates\index-6-one-page.html:190
+#: .\website\templates\index-6-one-page.html:262
 msgid "Pricing"
-msgstr ""
+msgstr "Pricing"
 
-#: .\website\templates\index-6-one-page.html:191
+#: .\website\templates\index-6-one-page.html:263
 msgid "Testimonial"
-msgstr ""
+msgstr "Testimonials"
 
-#: .\website\templates\index-6-one-page.html:192
+#: .\website\templates\index-6-one-page.html:264
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
-#~ msgid "الرئيسية"
-#~ msgstr "home"
+#: .\website\templates\index-6-one-page.html:269
+msgid "55 Clark St, Brooklyn, NY 11201, USA"
+msgstr "55 Clark St, Brooklyn, NY 11201, USA"
+
+#: .\website\templates\index-6-one-page.html:272
+msgid "Consultancy"
+msgstr "Consultancy"
+
+#: .\website\templates\index-6-one-page.html:290
+msgid "شركة تواسط ليبيا للحلول والخدمات التقنية"
+msgstr "Tawasut Libya for Technical Solutions and Services"
+
+#: .\website\templates\index-6-one-page.html:354
+msgid "تحليلات رقمية واستشارات تقنية تدفع بنمو أعمالك"
+msgstr "Digital analytics and technical consultations that drive your business growth"
+
+#: .\website\templates\index-6-one-page.html:359
+msgid ""
+"في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال "
+"حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات. "
+"نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح."
+msgstr "At Tawasut Libya, we help you make smart, data-driven decisions through custom data analysis solutions and advanced technologies in artificial intelligence and databases. We turn data into insight... and insight into success."
+
+#: .\website\templates\index-6-one-page.html:363
+msgid "خوارزميات ذكية لتحليل البيانات وتحسين الأداء"
+msgstr "Smart algorithms for data analysis and performance enhancement"
+
+#: .\website\templates\index-6-one-page.html:366
+msgid "الوصول السلس والآمن لأي معلومة في أي وقت"
+msgstr "Smooth and secure access to any information at any time"
+
+#: .\website\templates\index-6-one-page.html:373
+msgid "استشارات احترافية تساعدك على اتخاذ القرار بثقة"
+msgstr "Professional consultations that help you make decisions with confidence"
+
+#: .\website\templates\index-6-one-page.html:606
+msgid "Our working process"
+msgstr "Our Working Process"
+
+#: .\website\templates\index-6-one-page.html:608
+msgid "نحن في تواسط ليبيا، نبني مستقبل التقنية بخطى واثقة"
+msgstr "At Tawasut Libya, we build the future of technology with confident steps"
+
+#: .\website\templates\index-6-one-page.html:614
+msgid ""
+"في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو "
+"أعمالك وتطورها. نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن "
+"السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو "
+"المستقبل."
+msgstr "In a world of accelerating innovations, we offer you innovative digital solutions that help your business grow and evolve. We rely on our expertise in software development, ERP systems, cybersecurity, and cloud services to provide you with integrated technical services that elevate your organization towards the future."
+
+#: .\website\templates\index-6-one-page.html:617
+msgid "سهولة في التعامل"
+msgstr "Ease of Use"
+
+#: .\website\templates\index-6-one-page.html:618
+msgid "تنفيذ احترافي بمعايير عالمية"
+msgstr "Professional implementation with global standards"
+
+#: .\website\templates\index-6-one-page.html:619
+msgid "دعم فني متواصل 24/7"
+msgstr "Continuous technical support 24/7"
+
+#: .\website\templates\index-6-one-page.html:637
+msgid "Project Completed"
+msgstr "Projects Completed"
+
+#: .\website\templates\index-6-one-page.html:641
+msgid "Expert Consultants"
+msgstr "Expert Consultants"
+
+#: .\website\templates\index-6-one-page.html:645
+msgid "5 Stars Rating"
+msgstr "5-Star Ratings"
+
+#: .\website\templates\index-6-one-page.html:649
+msgid "Awards Winning"
+msgstr "Awards Won"
+
+#: .\website\templates\index-6-one-page.html:663
+msgid "تواصل معنا"
+msgstr "Contact Us"
+
+#: .\website\templates\index-6-one-page.html:664
+msgid "احجز استشارتك الان"
+msgstr "Book Your Consultation Now"
+
+#: .\website\templates\index-6-one-page.html:667
+msgid "الاسم بالكامل"
+msgstr "Full Name"
+
+#: .\website\templates\index-6-one-page.html:668
+msgid "البريد الالكتروني"
+msgstr "Email"
+
+#: .\website\templates\index-6-one-page.html:669
+msgid "رسالتك"
+msgstr "Your Message"
+
+#: .\website\templates\index-6-one-page.html:670
+msgid "ارسال"
+msgstr "Send"
+
+#: .\website\templates\index-6-one-page.html:678
+msgid "لا تتردد في التواصل معنا — فريقنا هنا لخدمتك"
+msgstr "Don't hesitate to contact us — our team is here to serve you"
+
+#: .\website\templates\index-6-one-page.html:680
+msgid ""
+"سواء كنت تبحث عن حل تقني متكامل، أو تحتاج إلى استشارة سريعة، نحن في تواسط "
+"ليبيا جاهزون لسماعك والإجابة على استفساراتك في أي وقت. اتصل بنا، ودعنا "
+"نساعدك على بناء مستقبل رقمي أقوى."
+msgstr "Whether you are looking for an integrated technical solution or a quick consultation, we at Tawasut Libya are ready to listen and answer your inquiries at any time. Contact us and let us help you build a stronger digital future."
+
+#: .\website\templates\index-6-one-page.html:691
+msgid "متواجدون دائماً لخدمتك على الرقم"
+msgstr "We are always available to serve you at the number"
+
+#: .\website\templates\index-6-one-page.html:886
+msgid "أخر الأخبار"
+msgstr "Latest News"
+
+#: .\website\templates\index-6-one-page.html:988
+msgid "لا تضيع وقتك في الحلول العشوائية، دع خبراء تواسط ليبيا يرشدونك."
+msgstr "Don't waste your time on random solutions; let Tawasut Libya's experts guide you."
+
+#: .\website\templates\index-6-one-page.html:993
+msgid "Get a quote"
+msgstr "Get a quote"
+
+#: .\website\templates\index-6-one-page.html:994
+msgid "قراءة المزيد"
+msgstr "Read More"
+
+#: .\website\templates\index-6-one-page.html:1011
+msgid ""
+"Sed ut perspiciatis unde omnis natus voluptatem accusa ntiumy doloremque "
+"laudantium.omnis natus voluptatem accusa ntiumy doloremque laudantium"
+msgstr "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+
+#: .\website\templates\index-6-one-page.html:1023
+msgid "Company"
+msgstr "Company"
+
+#: .\website\templates\index-6-one-page.html:1027
+#: .\website\templates\index-6-one-page.html:1043
+msgid "Company History"
+msgstr "Company History"
+
+#: .\website\templates\index-6-one-page.html:1028
+#: .\website\templates\index-6-one-page.html:1044
+msgid "Need a Career"
+msgstr "Careers"
+
+#: .\website\templates\index-6-one-page.html:1029
+#: .\website\templates\index-6-one-page.html:1045
+msgid "Working Process"
+msgstr "Working Process"
+
+#: .\website\templates\index-6-one-page.html:1030
+#: .\website\templates\index-6-one-page.html:1046
+msgid "Blog Post"
+msgstr "Blog"
+
+#: .\website\templates\index-6-one-page.html:1039
+msgid "Useful Link"
+msgstr "Useful Links"
+
+#: .\website\templates\index-6-one-page.html:1054
+msgid "News & Article"
+msgstr "News & Articles"
+
+#: .\website\templates\index-6-one-page.html:1060
+msgid "24th Nov 2020"
+msgstr "24th Nov 2020"
+
+#: .\website\templates\index-6-one-page.html:1061
+msgid "User’s Perspes Using Story Structure"
+msgstr "User’s Perspectives Using Story Structure"
+
+#: .\website\templates\index-6-one-page.html:1067
+msgid "15th July 2023"
+msgstr "15th July 2023"
+
+#: .\website\templates\index-6-one-page.html:1068
+msgid "Optimiz For Assistive Technology Users"
+msgstr "Optimize For Assistive Technology Users"

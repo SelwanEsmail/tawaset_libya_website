@@ -51,6 +51,7 @@
 <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 <!--  aos css plugins -->
 <link rel="stylesheet" href="{% static 'assets/css/aos.min.css' %}">
+
 <!--  main style css file -->
 {% comment %} <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"> {% endcomment %}
 
@@ -64,6 +65,7 @@
       {% comment %} <link rel="stylesheet" href="{% static 'assets/css/rtl-main.css' %}" /> {% endcomment %}
            <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     {% endif %}
+   
 </head>
 
 <body class="body-wrapper" dir="{% get_current_language as LANGUAGE_CODE %}{% if LANGUAGE_CODE == 'ar' %}
@@ -144,11 +146,13 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="header-cta">
-                            <ul>
-                                <li><a href="#"><i class="icon-location-dot"></i>شارع عمر المختار، طرابلس، ليبيا</a></li>
-                                <li><a href="mailto:techex@gmail.com"><i class="fal fa-envelope"></i>info@tawasot.ly</a></li>
-                                <li><a href="tel:+8801700080702"><i class="fal fa-phone"></i>+21891 1234567</a></li>
-                              </ul>
+                           {% load i18n %}
+
+                                <ul>
+                                    <li><a href="#"><i class="icon-location-dot"></i>{% trans "شارع عمر المختار، طرابلس، ليبيا" %}</a></li>
+                                    <li><a href="mailto:techex@gmail.com"><i class="fal fa-envelope"></i>info@tawasot.ly</a></li>
+                                    <li><a href="tel:+8801700080702"><i class="fal fa-phone"></i>+21891 1234567</a></li>
+                                </ul>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -210,8 +214,8 @@
                         <div class="main-menu">
                             <ul>
                                <li><a href="#home">{% trans "Home" %}</a></li>
-                                <li><a href="#about-us">{% trans "About " %}</a></li>
-                                <li><a href="#services">{% trans "Services" %}</a></li>
+                                {% comment %} <li><a href="#about-us">{% trans "About" %}</a></li> {% endcomment %}
+                                <li><a href="{% url 'news'%}">{% trans "news" %}</a></li>
                                 <li><a href="#pricing">{% trans "Projects" %}</a></li>
                                 <li><a href="#testimonial">{% trans "why us" %}</a></li>
                                 <li><a href="#blog">{% trans "Contact" %}</a></li>
@@ -232,7 +236,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <a href="contact.html" class="theme-btn">Consultancy <i class="icon-arrow-right-1"></i></a>
+                            {% comment %} <a href="contact.html" class="theme-btn">Consultancy <i class="icon-arrow-right-1"></i></a> {% endcomment %}
                         </div>
                         <div class="mobile-nav-bar d-block ml-3 ml-sm-4 d-xl-none">
                             <div class="mobile-nav-wrap">                    
@@ -246,20 +250,21 @@
                                     </button>
                                     <nav class="sidebar-nav">
                                         <ul class="metismenu" id="mobile-menu">
-                                            <li><a href="#home">Home</a></li>
-                                            <li><a href="#about-us">About Us</a></li>
-                                            <li><a href="#services">Services</a></li>
-                                            <li><a href="#pricing">pricing</a></li>
-                                            <li><a href="#testimonial">testimonial</a></li>
-                                            <li><a href="#blog">Blog</a></li>
+                                          
+                                                <li><a href="#home">{% trans "Home" %}</a></li>
+                                                <li><a href="#about-us">{% trans "About Us" %}</a></li>
+                                                <li><a href="#services">{% trans "Services" %}</a></li>
+                                                <li><a href="#pricing">{% trans "Pricing" %}</a></li>
+                                                <li><a href="#testimonial">{% trans "Testimonial" %}</a></li>
+                                                <li><a href="#blog">{% trans "Blog" %}</a></li>
                                         </ul>
                                     </nav>
         
                                     <div class="action-bar">
-                                        <a href="#"><i class="icon-location-dot"></i>55 Clark St, Brooklyn, NY 11201, USA</a>
-                                        <a href="mailto:techex@gmail.com"><i class="fal fa-envelope-open-text"></i>techex@gmail.com</a>
-                                        <a href="tel:123-456-7890"><i class="fal fa-phone"></i>+ 88 ( 9800 ) 6802</a>
-                                        <a href="contact.html" class="d-btn theme-btn black">Consultancy <i class="icon-arrow-right-1"></i></a>
+                                            <a href="#"><i class="icon-location-dot"></i>{% trans "55 Clark St, Brooklyn, NY 11201, USA" %}</a>
+                                            <a href="mailto:techex@gmail.com"><i class="fal fa-envelope-open-text"></i>techex@gmail.com</a>
+                                            <a href="tel:123-456-7890"><i class="fal fa-phone"></i>+ 88 ( 9800 ) 6802</a>
+                                            <a href="contact.html" class="d-btn theme-btn black">{% trans "Consultancy" %} <i class="icon-arrow-right-1"></i></a>
                                     </div>
                                 </div>                            
                             </div>
@@ -277,8 +282,7 @@
             <div class="row align-items-center">
                 <div class="col-md-12 col-lg-6">
                     <div class="banner-content">
-                        <h2 data-aos="fade-up">شركة تواسط ليبيا للحلول والخدمات التقنية
-</h2>
+                        <h2 data-aos="fade-up">{% trans "شركة تواسط ليبيا للحلول والخدمات التقنية" %}</h2>
                         <span>tawasot</span>
                         
                         {% comment %} <a data-aos="fade-up" data-aos-delay="100" href="contact.html" class="theme-btn mt-40">Discover More <i class="icon-arrow-right-1"></i></a> {% endcomment %}
@@ -339,22 +343,27 @@
                 </div>
                 <div class="col-md-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="section-title section__title_3 mb-30">
-                        <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>What we do</h6>
-                        <h2>تحليلات رقمية واستشارات تقنية تدفع بنمو أعمالك</h2>
+                        {% comment %} <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>What we do</h6> {% endcomment %}
+                        <h2>{% trans "تحليلات رقمية واستشارات تقنية تدفع بنمو أعمالك" %}</h2>
                     </div>
                     <div class="about-content">
-                        <p>في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات.
-نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح.</p>
-                        <div class="text">
-                            <p>خوارزميات ذكية لتحليل البيانات وتحسين الأداء</p>
-                        </div>
-                        <div class="text">
-                            <p>الوصول السلس والآمن لأي معلومة في أي وقت</p>
-                        </div>
-                        <div class="text">
-                            <p>استشارات احترافية تساعدك على اتخاذ القرار بثقة</p>
-                        </div>
-                        <a href="#" class="theme-btn mt-40">Know us more <i class="icon-arrow-right-1"></i></a>
+                        {% load i18n %}
+
+<p>{% trans "في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات. نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح." %}</p>
+                       {% load i18n %}
+
+                            <div class="text">
+                                <p>{% trans "خوارزميات ذكية لتحليل البيانات وتحسين الأداء" %}</p>
+                            </div>
+                            <div class="text">
+                                <p>{% trans "الوصول السلس والآمن لأي معلومة في أي وقت" %}</p>
+                            </div>
+                            <div class="text">
+                                {% comment %} <i class="fas fa-check"></i> {% endcomment %}
+                                {% comment %} <i class="fas fa-check-circle"></i> {% endcomment %}
+                                <p>{% trans "استشارات احترافية تساعدك على اتخاذ القرار بثقة" %}</p>
+                            </div>
+                        {% comment %} <a href="#" class="theme-btn mt-40">Know us more <i class="icon-arrow-right-1"></i></a> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -378,7 +387,7 @@
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-element text-center">
                         <div class="icon">
-                            <img src="{% static 'assets/img/home5/eng_01.png' %}" alt="">
+                            <img src="{% static 'assets/img/home5/erp.png' %}" alt="">
                         </div>
                         <h4>انظمة Erp</h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
@@ -388,7 +397,7 @@
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="150">
                     <div class="service-element text-center">
                         <div class="icon">
-                           <img src="{% static 'assets/img/home5/eng_02.png' %}" alt="">
+                           <img src="{% static 'assets/img/home5/server.png' %}" alt="">
                         </div>
                         <h4>الحوسبة السحابية</h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
@@ -398,7 +407,7 @@
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-element text-center">
                         <div class="icon">
-                            <img src="{% static 'assets/img/home5/eng_03.png' %}" alt>
+                            <img src="{% static 'assets/img/home5/cyber-criminal.png' %}" alt>
                         </div>
                         <h4>الامن السيبراني</h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
@@ -408,7 +417,7 @@
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-element text-center">
                         <div class="icon">
-                            <img src="{% static 'assets/img/home5/eng_03.png' %}" alt>
+                            <img src="{% static 'assets/img/home5/settings.png' %}" alt>
                         </div>
                         <h4>  بناء الانظمة </h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
@@ -568,25 +577,26 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
-                    <div class="section-title section__title_3 mb-30" >
-                        
-                        <h6>
-                            <img src="{% static 'assets/img/home5/bage.svg' %}" alt="">
-                            Our working process
-                        </h6>
-                        <h2>نحن في تواسط ليبيا، نبني مستقبل التقنية بخطى واثقة</h2>
-                    </div>
+                    {% load i18n %}
+
+                            <div class="section-title section__title_3 mb-30" >
+                                <h6>
+                                    <img src="{% static 'assets/img/home5/bage.svg' %}" alt="">
+                                    {% trans "Our working process" %}
+                                </h6>
+                                <h2>{% trans "نحن في تواسط ليبيا، نبني مستقبل التقنية بخطى واثقة" %}</h2>
+                            </div>
+                   {% load i18n %}
+
                     <div class="service-content">
-                            <p>
-                                في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو أعمالك وتطورها.
-نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو المستقبل.
-                            </p>
+                        <p>
+                            {% trans "في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو أعمالك وتطورها. نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو المستقبل." %}
+                        </p>
                         <div class="supports">
-                            <p>سهولة في التعامل</p><br>
-                            <p> تنفيذ احترافي بمعايير عالمية</p><br>
-                            <p class="">دعم فني متواصل 24/7</p>
+                            <p>{% trans "سهولة في التعامل" %}</p><br>
+                            <p>{% trans "تنفيذ احترافي بمعايير عالمية" %}</p><br>
+                            <p class="">{% trans "دعم فني متواصل 24/7" %}</p>
                         </div>
-                       
                     </div>
                 </div>
             </div>
@@ -599,22 +609,24 @@
     <section class="funfact-wrapper_2 section-bg bg-cover" style="background-image: url(./assets/img/home5/fun_fac_02.png);">
         <div class="container">
             <div class="funfact-content-grid text-white">
-                <div class="single-funfact-item">
-                    <h3>320 <span>+</span> </h3>
-                    <p>Project Completed</p>
-                </div>
-                <div class="single-funfact-item">
-                    <h3>1000 <span>+</span></h3>
-                    <p>Expert Consultants</p>
-                </div>
-                <div class="single-funfact-item">
-                    <h3>35 <span>+</span></h3>
-                    <p>5 Stars Rating</p>
-                </div>
-                <div class="single-funfact-item">
-                    <h3>850 <span>+</span></h3>
-                    <p>Awards Winning</p>
-                </div>
+              {% load i18n %}
+
+                    <div class="single-funfact-item">
+                        <h3>320 <span>+</span></h3>
+                        <p>{% trans "Project Completed" %}</p>
+                    </div>
+                    <div class="single-funfact-item">
+                        <h3>1000 <span>+</span></h3>
+                        <p>{% trans "Expert Consultants" %}</p>
+                    </div>
+                    <div class="single-funfact-item">
+                        <h3>35 <span>+</span></h3>
+                        <p>{% trans "5 Stars Rating" %}</p>
+                    </div>
+                    <div class="single-funfact-item">
+                        <h3>850 <span>+</span></h3>
+                        <p>{% trans "Awards Winning" %}</p>
+                    </div>
             </div>
         </div>
     </section> 
@@ -624,36 +636,40 @@
             <div class="row">
                 <div class="col-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact__element">
-                        <div class="section-title section__title_3 mb-30">
-                            <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>تواصل معنا</h6>
-                            <h2>احجز استشارتك الان</h2>
-                        </div>
-                        <form action="#">
-                            <input type="text" name="text" class="form-control" placeholder="الاسم بالكامل ">
-                            <input type="email" name="email" class="form-control" placeholder="البريد الالكتروني">
-                            <textarea name="text" class="form-control" placeholder=" رسالتك"></textarea>
-                            <input type="submit" class="form-control" value="ارسال ">
-                        </form>
+                       {% load i18n %}
+
+                            <div class="section-title section__title_3 mb-30">
+                                <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt="">{% trans "تواصل معنا" %}</h6>
+                                <h2>{% trans "احجز استشارتك الان" %}</h2>
+                            </div>
+                            <form action="#">
+                                <input type="text" name="text" class="form-control" placeholder="{% trans 'الاسم بالكامل' %}">
+                                <input type="email" name="email" class="form-control" placeholder="{% trans 'البريد الالكتروني' %}">
+                                <textarea name="text" class="form-control" placeholder="{% trans 'رسالتك' %}"></textarea>
+                                <input type="submit" class="form-control" value="{% trans 'ارسال' %}">
+                            </form>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
-                    <div class="contact__detels">
-                        <h2>لا تتردد في التواصل معنا — فريقنا هنا لخدمتك </h2>
-                        <p>
-                            سواء كنت تبحث عن حل تقني متكامل، أو تحتاج إلى استشارة سريعة،
-نحن في تواسط ليبيا جاهزون لسماعك والإجابة على استفساراتك في أي وقت.
-اتصل بنا، ودعنا نساعدك على بناء مستقبل رقمي أقوى.
-                        </p>
-                        <div class="action__call d-flex">
-                            <div class="icon">
-                                <img src="{% static 'assets/img/home5/phone.svg' %}" alt="">
-                            </div>
-                            <div class="content ml-20">
-                                <p>متواجدون دائماً لخدمتك على الرقم</p>
-                                <h4>091 1234567</h4>
-                            </div>
-                        </div>
-                    </div>
+                  {% load i18n %}
+
+<div class="contact__detels">
+    <h2>{% trans "لا تتردد في التواصل معنا — فريقنا هنا لخدمتك" %}</h2>
+    <p>
+        {% trans "سواء كنت تبحث عن حل تقني متكامل، أو تحتاج إلى استشارة سريعة، نحن في تواسط ليبيا جاهزون لسماعك والإجابة على استفساراتك في أي وقت. اتصل بنا، ودعنا نساعدك على بناء مستقبل رقمي أقوى." %}
+    </p>
+    <div class="action__call d-flex">
+        <div class="icon">
+            {% comment %} <img src="{% static 'assets/img/home5/phone.svg' %}" alt=""> {% endcomment %}
+            {% comment %} <i class="fal fa-phone" style="font-size: 30px; color:#F99329"></i> {% endcomment %}
+            <i class='bx bxs-phone-ring' style='color:#F99329;font-size: 35px;';></i> 
+        </div>
+        <div class="content ml-20">
+            <p>{% trans "متواجدون دائماً لخدمتك على الرقم" %}</p>
+            <h4>091 1234567</h4>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </div>
@@ -839,10 +855,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-12 col-md-12 offset-md-3 text-center">
-                    <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
-                        {% comment %} <h6><img src="assets/img/home5/bage.svg" alt>ARTICLES & TIPES</h6> {% endcomment %}
-                        <h2>أخر الأخبار   </h2>
-                    </div>
+                        <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
+                            {% comment %} <h6><img src="assets/img/home5/bage.svg" alt>ARTICLES & TIPES</h6> {% endcomment %}
+                            <h2>{% trans "أخر الأخبار" %}</h2>
+                        </div>
                 </div>
             </div>
 
@@ -934,21 +950,23 @@
 
     <section class="cta-banner style-3">
         <div class="container-fluid bg-cover section-bg" style="background-image: url('{% static 'assets/img/cta_bg1.png' %}');">
-            <div class="cta-content">
-                <div class="row align-items-center">
-                    <div class="col-xl-7 text-white col-12 text-center text-xl-left">
-                        <h1>
-                            لا تضيع وقتك في الحلول العشوائية، دع خبراء تواسط ليبيا يرشدونك.
-                        </h1>
-                    </div>
-                    <div class="col-xl-5 col-12">
-                        <div class="btn-wraper d-flex flex-wrap justify-content-xl-end mt-2 mt-md-4 mt-xl-0">
-                            <a href="contact.html" class="theme-btn">Get a quote <i class="icon-arrow-right-1"></i></a>
-                            <a href="services-details.html" class="theme-btn">قراءة المزيد <i class="icon-arrow-right-1" dt></i></a>
-                        </div>
-                    </div>
-                </div>
+           {% load i18n %}
+
+<div class="cta-content">
+    <div class="row align-items-center">
+        <div class="col-xl-7 text-white col-12 text-center text-xl-left">
+            <h1>
+                {% trans "لا تضيع وقتك في الحلول العشوائية، دع خبراء تواسط ليبيا يرشدونك." %}
+            </h1>
+        </div>
+        <div class="col-xl-5 col-12">
+            <div class="btn-wraper d-flex flex-wrap justify-content-xl-end mt-2 mt-md-4 mt-xl-0">
+                <a href="contact.html" class="theme-btn">{% trans "Get a quote" %} <i class="icon-arrow-right-1"></i></a>
+                <a href="services-details.html" class="theme-btn">{% trans "قراءة المزيد" %} <i class="icon-arrow-right-1" dt></i></a>
             </div>
+        </div>
+    </div>
+</div>
         </div>
     </section> 
 
@@ -957,11 +975,11 @@
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-md-6 col-xl-3 col-12 pr-xl-4">
-                        <div class="single-footer-wid site_footer_widget">
+                      <div class="single-footer-wid site_footer_widget">
                             <a href="index.html">
-                              <img src="{% static 'img/logo-2.png' %}" alt="">
+                                <img src="{% static 'img/logo-2.png' %}" alt="">
                             </a>
-                            <p class="mt-4">Sed ut perspiciatis unde omnis natus voluptatem accusa ntiumy doloremque laudantium.omnis natus voluptatem accusa ntiumy doloremque laudantium</p>
+                            <p class="mt-4">{% trans "Sed ut perspiciatis unde omnis natus voluptatem accusa ntiumy doloremque laudantium.omnis natus voluptatem accusa ntiumy doloremque laudantium" %}</p>
                             <div class="social-link mt-30">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -970,57 +988,60 @@
                             </div>
                         </div>
                     </div> <!-- /.col-lg-3 - single-footer-wid -->
-                    <div class="col-md-6 col-xl-2 col-12">                        
+                   <div class="col-md-6 col-xl-2 col-12">
                         <div class="single-footer-wid">
                             <div class="wid-title">
-                                <h4>Company</h4>
+                                <h4>{% trans "Company" %}</h4>
                             </div>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="about.html">Company History</a></li>
-                                <li><a href="contact.html">Need a Career</a></li>
-                                <li><a href="project-details.html">Working Process</a></li>
-                                <li><a href="news.html">Blog Post</a></li>
+                                <li><a href="about.html">{% trans "About Us" %}</a></li>
+                                <li><a href="about.html">{% trans "Company History" %}</a></li>
+                                <li><a href="contact.html">{% trans "Need a Career" %}</a></li>
+                                <li><a href="project-details.html">{% trans "Working Process" %}</a></li>
+                                <li><a href="news.html">{% trans "Blog Post" %}</a></li>
                             </ul>
                         </div>
                     </div> <!-- /.col-lg-3 - single-footer-wid -->
-                    <div class="col-md-6 col-xl-2 col-12">                        
-                        <div class="single-footer-wid">
-                            <div class="wid-title">
-                                <h4>Useful Link</h4>
+                 {% load i18n %}
+
+                        <div class="col-md-6 col-xl-2 col-12">
+                            <div class="single-footer-wid">
+                                <div class="wid-title">
+                                    <h4>{% trans "Useful Link" %}</h4>
+                                </div>
+                                <ul>
+                                    <li><a href="about.html">{% trans "About Us" %}</a></li>
+                                    <li><a href="about.html">{% trans "Company History" %}</a></li>
+                                    <li><a href="contact.html">{% trans "Need a Career" %}</a></li>
+                                    <li><a href="project-details.html">{% trans "Working Process" %}</a></li>
+                                    <li><a href="news.html">{% trans "Blog Post" %}</a></li>
+                                </ul>
                             </div>
-                            <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="about.html">Company History</a></li>
-                                <li><a href="contact.html">Need a Career</a></li>
-                                <li><a href="project-details.html">Working Process</a></li>
-                                <li><a href="news.html">Blog Post</a></li>
-                            </ul>
-                        </div>
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
-                    <div class="col-md-6 col-xl-3 col-12">
-                        <div class="single-footer-wid recent_post_widget">
-                            <div class="wid-title">
-                                <h4>News & Article</h4>
-                            </div>
-                            <div class="recent-post-list">
-                                <div class="single-recent-post">
-                                    <div class="thumb bg-cover" style="background-image: url('assets/img/techex-landing-page/article1.jpg');"></div>
-                                    <div class="post-data">
-                                        <span><i class="fal fa-calendar-alt"></i>24th Nov 2020</span>
-                                        <h5><a href="news-details.html">User’s Perspes Using Story Structure</a></h5>
+                        </div> <!-- /.col-lg-3 - single-footer-wid -->
+               
+                        <div class="col-md-6 col-xl-3 col-12">
+                            <div class="single-footer-wid recent_post_widget">
+                                <div class="wid-title">
+                                    <h4>{% trans "News & Article" %}</h4>
+                                </div>
+                                <div class="recent-post-list">
+                                    <div class="single-recent-post">
+                                        <div class="thumb bg-cover" style="background-image: url('assets/img/techex-landing-page/article1.jpg');"></div>
+                                        <div class="post-data">
+                                            <span><i class="fal fa-calendar-alt"></i>{% trans "24th Nov 2020" %}</span>
+                                            <h5><a href="news-details.html">{% trans "User’s Perspes Using Story Structure" %}</a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="single-recent-post">
+                                        <div class="thumb bg-cover" style="background-image: url('assets/img/techex-landing-page/article2.jpg');"></div>
+                                        <div class="post-data">
+                                            <span><i class="fal fa-calendar-alt"></i>{% trans "15th July 2023" %}</span>
+                                            <h5><a href="news-details.html">{% trans "Optimiz For Assistive Technology Users" %}</a></h5>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="single-recent-post">
-                                    <div class="thumb bg-cover" style="background-image: url('assets/img/techex-landing-page/article2.jpg');"></div>
-                                    <div class="post-data">
-                                        <span><i class="fal fa-calendar-alt"></i>15th July 2023</span>
-                                        <h5><a href="news-details.html">Optimiz For Assistive Technology Users</a></h5>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
+                        </div><!-- /.col-lg-3 - single-footer-wid -->
                 </div>
             </div>
         </div>
@@ -1028,7 +1049,7 @@
         <div class="footer-bottom">
             <div class="container text-center">
                 <div class="footer-bottom-content">
-                    © 2024 <a href="index.html">Techex</a>. All Rights Reserved
+                    © 2024 <a href="index.html">selwanAboujela</a>. All Rights Reserved
                 </div>
             </div>
         </div>
@@ -1059,5 +1080,6 @@
 <script src="{% static 'assets/js/ajax-mail.js' %}"></script>
 <script src="{% static 'assets/js/aos.min.js' %}"></script>
 <script src="{% static 'assets/js/active.js' %}"></script>
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </body>
 
