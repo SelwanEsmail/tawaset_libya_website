@@ -38,7 +38,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
     'website',
     'modeltranslation',
     "unfold",  # before django.contrib.admin
@@ -58,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -156,10 +156,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # وين Django يدوّر على ملفات static أثناء التطوير
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / "static",
 ]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
@@ -227,13 +231,13 @@ CKEDITOR_CONFIGS = {
 }
 
 UNFOLD = {
-    "SITE_TITLE": "Custom suffix in <title> tag",
-    "SITE_HEADER": "Appears in sidebar at the top",
+    "SITE_TITLE": "<title> Tawasout libya </title>",
+    "SITE_HEADER": "شركة تواسط ليبيا",
     "SITE_SUBHEADER": "Appears under SITE_HEADER",
     "SITE_DROPDOWN": [
         {
             "icon": "diamond",
-            "title": _("My site"),
+            "title": _("تواسط ليبيا"),
             "link": "https://example.com",
         },
         # ...
@@ -249,46 +253,41 @@ UNFOLD = {
         "light": lambda request: static("logo.png"),  # light mode
         "dark": lambda request: static("logo.png"),  # dark mode
     },
-    
-     "COLORS": {
+     "STYLES": [
+        lambda request: static("css/style.css"),
+        lambda request: static("css/custom.css"),
+    ],
+    "SCRIPTS": [
+        lambda request: static("js/script.js"),
+    ],
+    "SHOW_HISTORY": True,
+    "BORDER_RADIUS": "6px",
+    "COLORS": {
         "base": {
-             "50":  "246, 238, 232",     # أقرب للبرتقالي الفاتح
-            "100": "233, 217, 210",
-            "200": "212, 185, 174",
-            "300": "178, 149, 137",
-            "400": "144, 113, 100",
-            "500": "112, 86, 77",       # منتصف بين الأزرق والبرتقالي
-            "600": "86, 70, 74",
-            "700": "62, 53, 71",
-            "800": "40, 36, 65",
-            "900": "20, 20, 56",
-            "950": "10, 10, 40",        
+            "50": "249, 250, 251",#side bar colot
+            "100": "249, 147, 41", # hover side bar
+            "200": "229, 231, 235",
+            "300": "209, 213, 219",
+            "400": "156, 163, 175",
+            "500": "107, 114, 128",
+            "600": "75, 85, 99",
+            "700": "55, 65, 81",
+            "800": "31, 41, 55",
+            "900": "17, 24, 39",
+            "950": "3, 7, 18",
         },
-     "primary": {
-    "50":  "246, 238, 232",     # أقرب للبرتقالي الفاتح
-    "100": "233, 217, 210",
-    "200": "212, 185, 174",
-    "300": "178, 149, 137",
-    "400": "144, 113, 100",
-    "500": "112, 86, 77",       # منتصف بين الأزرق والبرتقالي
-    "600": "86, 70, 74",
-    "700": "62, 53, 71",
-    "800": "40, 36, 65",
-    "900": "20, 20, 56",
-    "950": "10, 10, 40",        # قريب من الأزرق الداكن جداً
-},
-        "accent": {
-            "50": "255, 245, 230",
-            "100": "255, 235, 204",
-            "200": "254, 216, 165",
-            "300": "253, 197, 126",
-            "400": "252, 178, 87",
-            "500": "249, 147, 41",       # #F99329
-            "600": "214, 125, 34",
-            "700": "179, 104, 28",
-            "800": "143, 83, 22",
-            "900": "108, 63, 16",
-            "950": "72, 42, 10",
+        "primary": {
+            "50": "250, 245, 255",
+            "100": "243, 232, 255",
+            "200": "233, 213, 255",
+            "300": "216, 180, 254",
+            "400": "192, 132, 252",
+            "500": "168, 85, 247",
+            "600": "10, 58, 106",
+            "700": "126, 34, 206",
+            "800": "107, 33, 168",
+            "900": "88, 28, 135",
+            "950": "59, 7, 100",
         },
         "font": {
             "subtle-light": "var(--color-base-500)",  # text-base-500
@@ -300,11 +299,14 @@ UNFOLD = {
         },
     },
      "SIDEBAR": {
-        "show_search": False,  # Search in applications and models names
+        "show_search": True,  # Search in applications and models names
         "command_search": False,  # Replace the sidebar search with the command search
         "show_all_applications": False,  # Dropdown with all applications and models
         
     },
+    #    "SHOW_LANGUAGES": True,
     
    
 }
+
+

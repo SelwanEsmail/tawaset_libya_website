@@ -1,0 +1,58 @@
+{% extends "admin/base.html" %}
+
+{% block title %}لوحة التحكم{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <!-- ربط الخط العربي من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body, input, textarea, select, .form-control, .module caption, .dashboard-module h2 {
+            font-family: 'Cairo', sans-serif !important;
+            direction: rtl;
+            text-align: right;
+            font-size: 15px;
+        }
+        /* ضبط اتجاه الجدول */
+table {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ضبط رؤوس الأعمدة */
+th {
+    text-align: right !important;
+}
+
+/* ضبط خلايا الجدول */
+td {
+    text-align: right !important;
+}
+
+/* لو تستخدم Unfold أو Bootstrap */
+.table th, .table td {
+    text-align: right;
+    direction: rtl;
+}
+
+/* تحسين عرض زر التصدير والبحث */
+input[type="search"], .btn {
+    direction: rtl;
+    text-align: right;
+}
+
+        /* تحسين عرض العناصر */
+        .breadcrumbs, .colMS, .colSM {
+            direction: rtl;
+        }
+
+        .dashboard-module h2 {
+            font-size: 1.2em;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">لوحة التحكم الخاصة بك</h1>
+{% endblock %}

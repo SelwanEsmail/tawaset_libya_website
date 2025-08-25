@@ -1,0 +1,38 @@
+.container-1314 {
+    max-width: 1314px;
+}
+
+.container-1432 {
+    max-width: 1432px;
+}
+
+.pt-195 {
+    padding-top: 195px;
+}
+.pb-147 {
+    padding-bottom: 147px;
+}
+
+.pt-282 {
+    padding-top: 282px;
+}
+
+.section-space {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    @media (max-width: 991px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: 575px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}

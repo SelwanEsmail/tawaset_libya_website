@@ -1,0 +1,129 @@
+.faq-9 {
+    &__text {
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 48px;
+        color: #010205;
+        font-weight: 700;
+        line-height: 1;
+
+        @media #{$lg} {
+            font-size: 40px;
+        }
+
+        @media #{$xs} {
+            font-size: 27px;
+        }
+    }
+
+    &__dec {
+        font-size: 16px;
+        font-weight: 500;
+        color: #696969;
+        line-height: 1.8;
+        padding-right: 120px;
+        margin-bottom: 42px;
+        margin-top: 25px;
+        font-family: "Nunito", sans-serif;
+
+        @media #{$lg} {
+            padding-right: 50px;
+        }
+
+        @media #{$md,$sm} {
+            margin-bottom: 30px;
+        }
+
+        @media #{$xs} {
+            padding-right: 0px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+    }
+
+    &__accordion {
+        &__item {
+            & .card-headers {
+                h2 {
+                    button {
+                        font-size: 24px;
+                        font-weight: 600;
+                        color: #010205;
+                        line-height: 34px;
+                        text-align: left;
+                        background: none;
+                        margin-bottom: 25px;
+                        padding-right: 181px;
+                        position: relative;
+
+                        @media #{$lg} {
+                            padding-right: 60px;
+                        }
+
+                        @media #{$sm} {
+                            padding-right: 90px;
+                        }
+
+                        @media #{$xs} {
+                            padding-right: 0px;
+                            font-size: 20px;
+                        }
+
+                        &.btn-links {
+                            &::after {
+                                content: "\f068";
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                font-weight: 400;
+                                font-family: "Font Awesome 5 Pro";
+                                transform: translateY(-50%);
+
+                                @media #{$xs} {
+                                    display: none;
+                                }
+                            }
+
+                            &.collapsed::after {
+                                content: "\f067";
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+
+                                @media #{$xs} {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .accordion {
+                & .card-bodys {
+                    padding-left: 0;
+                    padding-top: 0px;
+                    padding-bottom: 30px;
+                    font-size: 16px;
+                    color: #696969;
+                    font-weight: 400;
+                    line-height: 26px;
+                    font-family: $text-font;
+                }
+
+                & .cards {
+                    padding-top: 23px;
+                    border-top: 1px solid rgb(1, 2, 5, .1);
+                    border-radius: 0;
+                    margin-bottom: -1px;
+                    border-bottom: 1px solid rgb(1, 2, 5, .1);
+                }
+            }
+        }
+    }
+}

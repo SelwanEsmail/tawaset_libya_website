@@ -3,23 +3,38 @@ from .models import Project
 from .models import News, NewsMedia
 # news/admin.py
 from django.utils.html import format_html
-# Register your models here.
+from unfold.admin import ModelAdmin
+
+from unfold.admin import ModelAdmin
+from import_export.admin import ImportExportModelAdmin
+from unfold.contrib.import_export.forms import ExportForm, ImportForm, SelectableFieldsExportForm
+
+
+
 @admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(ModelAdmin,ImportExportModelAdmin):
+
     list_display = ('name', 'created_at')
     search_fields = ('name',)
+    
+    import_form_class = ImportForm
+    export_form_class = ExportForm
 
 class NewsMediaInline(admin.TabularInline):
     model = NewsMedia
     extra = 1 # عدد الحقول الفارغة للوسائط الجديدة
 
 @admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
+class NewsAdmin(ModelAdmin,ImportExportModelAdmin):
+
     list_display = ('title', 'created_at')
     search_fields = ('title', 'description')
     list_filter = ('author', 'created_at')
     inlines = [NewsMediaInline]
     readonly_fields = ('author',)
+
+    import_form_class = ImportForm
+    export_form_class = ExportForm
 
     # لحفظ المستخدم الذي أضاف الخبر تلقائياً
     def save_model(self, request, obj, form, change):
@@ -36,4 +51,3 @@ class NewsAdmin(admin.ModelAdmin):
         return format_html(''.join(image_list)) if image_list else "—"
 
     image_preview.short_description = 'الصور'
-    

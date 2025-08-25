@@ -1,0 +1,173 @@
+.header-9 {
+    margin-top: 30px;
+
+    &.sticky {
+        margin-top: 0px;
+    }
+
+    &__wrapper {
+        background-color: $white;
+        padding: 0 30px;
+        border-radius: 30px;
+        box-shadow: 0px 3px 10px rgba(1, 2, 5, 0.1);
+
+        @media #{$md,$sm,$xs} {
+            padding: 23.5px 30px;
+        }
+
+        & #hamburger {
+            @media #{$md,$sm,$xs} {
+                padding-left: 0;
+            }
+        }
+    }
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    @include transition(.3s);
+
+    .main-menu {
+        ul {
+            line-height: 1;
+
+            >li {
+                display: inline-block;
+                line-height: 1;
+
+                >a {
+                    text-align: left;
+                    display: inline-block;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    line-height: 1;
+                    padding: 40.5px 21px;
+                    font-weight: 400;
+                    color: #010205;
+                    overflow: hidden;
+
+                    @media #{$lg} {
+                        padding: 40.5px 17px;
+                    }
+
+                    &.active {
+                        color: #99EA48;
+                    }
+                }
+
+                &:hover {
+                    >a {
+                        color: #99EA48;
+                    }
+
+                    >ul {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+                }
+
+                >ul {
+                    position: absolute;
+                    top: 100%;
+                    width: 230px;
+                    background-color: $white;
+                    left: 0;
+                    z-index: 999;
+                    box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: translateY(40px);
+                    transition: all .5s ease-in-out;
+                    padding: 10px 0px;
+
+                    li {
+                        display: block;
+
+                        a {
+                            display: block;
+                            color: #010205;
+                            padding: 12px 25px;
+
+                            &:hover {
+                                color: #99EA48;
+                            }
+                        }
+                    }
+
+                    ul {
+                        left: 100%;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .theme-btn {
+        @media (max-width: 1199px) {
+            padding: 17px 32px;
+            font-size: 12px;
+        }
+    }
+
+
+    #hamburger {
+        @media (max-width: 991px) {
+            color: #99EA48;
+        }
+    }
+
+    & .mobile-nav {
+        background-color: #99EA48;
+
+        & .sidebar-nav {
+            & .metismenu {
+                a {
+                    color: #010205;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: #010205;
+                        color: #fff;
+                    }
+                }
+
+                ul a {
+                    &::before {
+                        border: 2px solid #010205;
+                    }
+
+                    &:hover::before {
+                        background-color: #fff;
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+
+        & .close-nav {
+            color: #010205;
+        }
+
+        & .action-bar {
+            a {
+                color: #010205;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            & .theme-btn:hover {
+                background-color: #fff;
+                border: 1px solid #fff;
+                color: #010205 !important;
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,88 @@
+.project-9 {
+    &__thumb {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(1, 2, 5, 0) 0%, #010205 100%);
+        }
+    }
+
+    &__text {
+        position: absolute;
+        left: 40px;
+        bottom: 40px;
+        z-index: 2;
+
+        @media #{$xs} {
+            left: 30px;
+            bottom: 30px;
+        }
+    }
+}
+
+.project-9__text span {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+}
+
+h3.project-9__title {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 10px;
+
+    @media #{$md,$xs} {
+        font-size: 20px;
+        margin-top: 0px;
+    }
+    &:hover{
+        color: #99EA48;
+    }
+}
+
+.project-9__btn {
+    position: absolute;
+    right: 50px;
+    bottom: 39px;
+    z-index: 2;
+
+    @media #{$xs} {
+        right: 30px;
+        bottom: 39px;
+    }
+}
+
+a.rr-arrow-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    transition: .3s;
+
+    &:hover {
+        background-color: #99EA48;
+        border-color: #99EA48;
+
+        svg [stroke="white"] {
+            stroke: #010205;
+            transition: .3s;
+        }
+    }
+}
