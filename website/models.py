@@ -17,11 +17,24 @@ class Project(models.Model):
         verbose_name_plural = "المشاريع"
 
 #-------------------- News --------------#
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="اسم التصنيف")
+    slug = models.SlugField(max_length=120, unique=True, verbose_name="الرابط")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "تصنيف"
+        verbose_name_plural = "التصنيفات"
 class News(models.Model):
     title = models.CharField(max_length=255, verbose_name="عنوان الخبر")
     description = RichTextField(verbose_name="وصف الخبر") # السطر الجديد
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="المستخدم الذي أضاف الخبر")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="التصنيف", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="تاريخ النشر")
+    # views = models.PositiveIntegerField(default=0, verbose_name="عدد المشاهدات") 
 
     def __str__(self):
         return self.title
@@ -30,7 +43,9 @@ class News(models.Model):
         if not obj.pk:  # هذا الشرط يعني "عند إنشاء خبر جديد فقط"
             obj.author = request.user # اجعل حقل "author" هو المستخدم الحالي
         super().save_model(request, obj, form, change)
-
+    def get_first_image(self):
+        first_media = self.media.filter(file__icontains='.jpg').first() or self.media.filter(file__icontains='.png').first()  
+        return first_media.file.url if first_media else None
     class Meta:
         verbose_name = "خبر"
         verbose_name_plural = "الأخبار"

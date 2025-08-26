@@ -76,7 +76,8 @@ ROOT_URLCONF = 'tawasul_libya_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        # 'DIRS': ['templates'],
+        'DIRS':  [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -304,7 +305,7 @@ UNFOLD = {
         "show_all_applications": False,  # Dropdown with all applications and models
         
     },
-    #    "SHOW_LANGUAGES": True,
+       "SHOW_LANGUAGES": True,
     
    
 }

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Project
-from .models import News, NewsMedia
+from .models import News, NewsMedia,Category
 # news/admin.py
 from django.utils.html import format_html
 from unfold.admin import ModelAdmin
@@ -51,3 +51,9 @@ class NewsAdmin(ModelAdmin,ImportExportModelAdmin):
         return format_html(''.join(image_list)) if image_list else "—"
 
     image_preview.short_description = 'الصور'
+
+
+@admin.register(Category)
+class CategoryAdmin(ModelAdmin,ImportExportModelAdmin):
+    list_display = ('name', 'slug')
+    prepopulated_fields = {"slug": ("name",)}  # يملأ الـ slug تلقائياً من الاسم

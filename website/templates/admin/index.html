@@ -1,0 +1,14 @@
+{% extends "admin/index.html" %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body, input, textarea, select, .form-control {
+            font-family: 'Cairo', sans-serif !important;
+            direction: rtl;
+            text-align: right;
+            font-size: 15px;
+        }
+    </style>
+{% endblock %}
