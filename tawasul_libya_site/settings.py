@@ -311,3 +311,12 @@ UNFOLD = {
 }
 
 
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.tawasot.ly' # مثال لـ Gmail
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'info@tawasot.ly'  # بريدك الإلكتروني
+EMAIL_HOST_PASSWORD = 'IN@TW2025' # كلمة المرور الخاصة بالتطبيق (App Password)
+DEFAULT_FROM_EMAIL = 'info@tawasot.ly'
+

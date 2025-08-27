@@ -49,7 +49,7 @@
               </div>
                 <div style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px">
                   <div class="post-content">
-                    <h2 class="title_news"><a class="title_news" href="news-details.html" style="text-decoration: none;">{{ news.title }}</a></h2>
+                    <h2 class="title_news"><a class="title_news" href="{% url 'news_detail' news.id %}" style="text-decoration: none;">{{ news.title }}</a></h2>
                     <div class="post-meta">
                       {% comment %} <span><i class="fal fa-eye"></i>232 Views</span> {% endcomment %}
                       {% comment %} <span><i class="fal fa-comments"></i>35 Comments</span> {% endcomment %}
@@ -66,7 +66,7 @@
                         <h5>{{ news.author.username }}</h5>
                       </div>
                       <div class="post-link">
-                        <a class="read_more_news" href="news-details.html"><i class="fal fa-arrow-right"></i> {% trans 'Read More' %}</a>
+                        <a class="read_more_news" href="{% url 'news_detail' news.id %}"><i class="fal fa-arrow-right"></i> {% trans 'Read More' %}</a>
                       </div>
                     </div>
                   </div>

@@ -34,7 +34,7 @@
             </div>
     </section>
 
-    <div class="client-brand-logo-wrap techex-landing-page  section-padding-3 bg-white">
+    {% comment %} <div class="client-brand-logo-wrap techex-landing-page  section-padding-3 bg-white">
         <div class="container">
             <div class="brand-carousel-active d-flex justify-content-between owl-carousel">
                <div class="single-client">
@@ -54,9 +54,9 @@
                     </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 
-    <section id="about-us" class="about-wrapper">
+    <section id="about-us" class="about-wrapper" style="margin-top: 70px;">
         <div class="container">
             <div class="row position-relative">
                 <div class="col-md-12 col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -103,50 +103,50 @@
     <section class="analytics-wrapper section-padding-3 bg-center bg-cover" style="background-image: url('{% static 'assets/img/home5/service_bg.png' %}');">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-xl-12 col-md-12 offset-md-3 text-center">
+                <div class="col-12 col-xl-12 col-md-12  text-center ">
                     <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
                         {% comment %} <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>خدماتنا</h6> {% endcomment %}
-                        <h2>خدماتنا</h2>
+                        <h2>{% trans 'خدماتنا' %}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-element text-center">
+                    <div class="service-element text-center my_service">
                         <div class="icon">
                             <img src="{% static 'assets/img/home5/erp.png' %}" alt="">
                         </div>
-                        <h4>انظمة Erp</h4>
+                        <h4>{% trans 'انظمة Erp' %}</h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
                         {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="150">
-                    <div class="service-element text-center">
+                    <div class="service-element text-center my_service">
                         <div class="icon">
                            <img src="{% static 'assets/img/home5/server.png' %}" alt="">
                         </div>
-                        <h4>الحوسبة السحابية</h4>
+                        <h4>{% trans 'Cloud Computing' %}</h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
                         {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-element text-center">
+                    <div class="service-element text-center my_service">
                         <div class="icon">
                             <img src="{% static 'assets/img/home5/cyber-criminal.png' %}" alt>
                         </div>
-                        <h4>الامن السيبراني</h4>
-                        {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
+                        <h4>{% trans 'Cybersecurity' %}</h4>
+                        {% comment %} <p> ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
                         {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-30" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-element text-center">
+                    <div class="service-element text-center my_service">
                         <div class="icon">
                             <img src="{% static 'assets/img/home5/settings.png' %}" alt>
                         </div>
-                        <h4>  بناء الانظمة </h4>
+                        <h4>  {% trans 'System Development' %}</h4>
                         {% comment %} <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p> {% endcomment %}
                         {% comment %} <a href="#" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a> {% endcomment %}
                     </div>
@@ -155,144 +155,8 @@
         </div>
     </section>
 
-    {% comment %} <section class="prosess-wrapper section-padding-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-xl-6 col-md-6 offset-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="section-title section__title_3 mb-30" >
-                        <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>Our working process</h6>
-                        <h2>We Follow 3 steps to Grow Business</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row" >
-                <div class="col-12 col-sm-6 col-lg-3 pt-30">
-                    <div class="prosess-element position-relative text-center">
-                        <div class="icon">
-                            <img src="{% static 'assets/img/home5/icon_01.svg' %}" alt="">
-                        </div>
-                        <h4>Data Analysis</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <span>Step-1</span>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-70 pt-30">
-                    <div class="prosess-element position-relative text-center">
-                        <div class="icon">
-                            <img src="{% static 'assets/img/home5/icon_02.svg' %}" alt="">
-                        </div>
-                        <h4>Make Idea</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <span>Step-2</span>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 pt-30">
-                    <div class="prosess-element position-relative text-center ">
-                        <div class="icon">
-                            <img src="{% static 'assets/img/home5/icon_03.svg' %}" alt="">
-                        </div>
-                        <h4>Our Mission</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <span>Step-3</span>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-40 pt-30">
-                    <div class="prosess-element position-relative text-center">
-                        <div class="icon">
-                           <img src="{% static 'assets/img/home5/icon_04.svg' %}" alt="">
-                        </div>
-                        <h4>Our Values</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <span>Step-4</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="pro-line text-center">
-            <img src="{% static 'assets/img/home5/bg_shape_03.svg' %}" alt="">
-        </div>
-    </section> {% endcomment %}
-<!----------------------------- Start project---------------------------------------------------->
-    {% comment %} <section class="project-carousel-wrapper section-padding-3">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-xl-7 col-lg-8">
-                    <div class="section-title section__title_3 mb-30">
-                        <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>Completed Projects</h6>
-                        <h2>We Have Successfully Completed One IT Solutions Project</h2>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 text-start text-lg-end">
-                    <div class="project__btn">
-                        <a href="#" class="theme-btn">View All Work <i class="icon-arrow-right-1"></i></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="container-fluid">
-            <div class="project-carousel-card-active owl-carousel mt-30">
-                <div class="project__items">
-                    <div class="project__image bg-cover bg-center" style="background-image: url('{% static '.assets/img/home5/team_01.png' %}');">
-                        <div class="box">
-                            <a href="#">
-                                <i class="far fa-long-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project__content">
-                        <h4>Web Development</h4>
-                        <p>Ideas / Design</p>
-                    </div>
-                    
-                </div>
-                <div class="project__items">
-                    <div class="project__image bg-cover bg-center" style="background-image: url('{% static '.assets/img/home5/team_02.png' %}');">
-                        <div class="box">
-                            <a href="#">
-                                <i class="far fa-long-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project__content">
-                        <h4>Web Development</h4>
-                        <p>Ideas / Design</p>
-                    </div>
-                    
-                </div>
-                <div class="project__items">
-                    <div class="project__image bg-cover bg-center" style="background-image: url('{% static '.assets/img/home5/team_03.png' %}');">
-                        <div class="box">
-                            <a href="#">
-                                <i class="far fa-long-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project__content">
-                        <h4>Web Development</h4>
-                        <p>Ideas / Design</p>
-                    </div>
-                    
-                </div>
-                <div class="project__items">
-                    <div class="project__image bg-cover bg-center" style="background-image: url(./assets/img/home5/team_04.png);">
-                        <div class="box">
-                            <a href="#">
-                                <i class="far fa-long-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project__content">
-                        <h4>Web Development</h4>
-                        <p>Ideas / Design</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section> {% endcomment %}
-
-    <section id="services" class="service__wrapper">
+    
+    <section id="services" class="service__wrapper about-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-6 mt-30">
@@ -319,11 +183,30 @@
                         <p>
                             {% trans "في عالم تتسارع فيه الابتكارات، نضع بين يديك حلولاً رقمية مبتكرة تساعد على نمو أعمالك وتطورها. نعتمد على خبراتنا في تطوير البرمجيات، أنظمة ERP، الأمن السيبراني، والخدمات السحابية لنمنحك خدمات تقنية متكاملة ترتقي بمؤسستك نحو المستقبل." %}
                         </p>
-                        <div class="supports">
-                            <p>{% trans "سهولة في التعامل" %}</p><br>
-                            <p>{% trans "تنفيذ احترافي بمعايير عالمية" %}</p><br>
-                            <p class="">{% trans "دعم فني متواصل 24/7" %}</p>
-                        </div>
+                        <div class="about-content">
+                        {% load i18n %}
+
+<p>{% trans "في تواسط ليبيا، نساعدك على اتخاذ قرارات ذكية مبنية على البيانات، من خلال حلول تحليل بيانات مخصصة وتقنيات متقدمة في الذكاء الاصطناعي وقواعد البيانات. نُحَوِّل البيانات إلى رؤية... والرؤية إلى نجاح." %}</p>
+                       {% load i18n %}
+
+                            <div class="text">
+                                <p>{% trans "سهولة في التعامل" %}</p>
+                            </div>
+                            <div class="text">
+                                <p>{% trans "تنفيذ احترافي بمعايير عالمية" %}</p>
+                            </div>
+                            <div class="text">
+                                {% comment %} <i class="fas fa-check"></i> {% endcomment %}
+                                {% comment %} <i class="fas fa-check-circle"></i> {% endcomment %}
+                                <p>{% trans "دعم فني متواصل 24/7" %}</p>
+                            </div>
+                        {% comment %} <a href="#" class="theme-btn mt-40">Know us more <i class="icon-arrow-right-1"></i></a> {% endcomment %}
+                    </div>
+                        {% comment %} <div class="supports">
+                            <p></p><br>
+                            <p></p><br>
+                            <p class=""></p>
+                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -358,7 +241,7 @@
         </div>
     </section> 
 
-    <section class="contact_form__wrapper section-padding-3">
+    <section class="contact_form__wrapper section-padding-3" id=contact>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6 mt-30" data-aos="fade-up" data-aos-delay="100">
@@ -393,7 +276,7 @@
         </div>
         <div class="content ml-20">
             <p>{% trans "متواجدون دائماً لخدمتك على الرقم" %}</p>
-            <h4>091 1234567</h4>
+            <h4 style="direction: ltr;">091-1234567</h4>
         </div>
     </div>
 </div>
@@ -581,7 +464,7 @@
     <section id="blog" class="blog-section blog-wrapper section-padding-3 bg-cover bg-center" style="background-image: url(./assets/img/home5/blog_bg_line.svg);">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-xl-12 col-md-12 offset-md-3 text-center">
+                <div class="col-12 col-xl-12 col-md-12 offset-md-12 text-center">
                         <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
                             {% comment %} <h6><img src="assets/img/home5/bage.svg" alt>ARTICLES & TIPES</h6> {% endcomment %}
                             <h2>{% trans "أخر الأخبار" %}</h2>
@@ -590,25 +473,30 @@
             </div>
 
             <div class="row">
+                {% for news in latest_news|dictsortreversed:'created_at'|slice:':3' %}
                 <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
-                    <div class="single-blog-card style-3">
-                        <div class="blog-featured-thumb bg-cover" style="background-image: url('assets/img/home5/card_01.png')"></div>
+                    <div class="single-blog-card style-3" style="height: 520px;">
+                        <div class="blog-featured-thumb bg-cover" style="background-image: url({% if news.get_first_image %}
+                        {{ news.get_first_image }}
+                      {% else %}
+                        {% static 'images/no-image.jpg' %}
+                      {% endif %})"></div>
                         <div class="content">
                             <div class="post-top-meta d-flex flex-wrap align-items-center">
                                 <div class="post-date">
-                                    <a href="#"><i class="fal fa-calendar-alt"></i>18 Jan 2022</a>
+                                    <a href="#"><i class="fal fa-calendar-alt"></i>{{ news.created_at|date:'Y-m-d H:i' }}</a>
                                 </div>
                                 {% comment %} <div class="post-comment">
                                     <a href="#"><i class="icon-message"></i>02 Comments</a>
                                 </div> {% endcomment %}
                             </div>
-                            <h3><a href="news-details.html">Web Development</a></h3>
-                            <div class="excerpt">
-                                <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
+                            <h3 style="max-height: 85px; min-height: 85px;overflow: hidden;"><a href="news-details.html">{{ news.title }}</a></h3>
+                            <div class="excerpt" style="max-height: 64px; overflow: hidden;">
+                                <p>{{news.description |safe}}</p>
                             </div>
                             <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a href="news-details.html">قراءة المزيد <i class="icon-arrow-right-1"></i></a>
-                                <a href="#"><i class="fal fa-share-alt"></i></a>
+                                <a class="show_more" href="news-details.html">{% trans 'read more' %}<i class="icon-arrow-right-1"></i></a>
+                                {% comment %} <a href="#"><i class="fal fa-share-alt"></i></a> {% endcomment %}
                             </div>
                             
                         </div>
@@ -617,60 +505,8 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="single-blog-card style-3">
-                        <div class="blog-featured-thumb bg-cover" style="background-image: url('assets/img/home5/card_02.png')"></div>
-                        <div class="content">
-                            <div class="post-top-meta d-flex flex-wrap align-items-center">
-                                <div class="post-date">
-                                    <a href="#"><i class="fal fa-calendar-alt"></i>18 Jan 2022</a>
-                                </div>
-                                <div class="post-comment">
-                                    {% comment %} <a href="#"><i class="icon-message"></i>02 Comments</a> {% endcomment %}
-                                </div>
-                            </div>
-                            <h3><a href="news-details.html">Web Development</a></h3>
-                            <div class="excerpt">
-                                <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
-                            </div>
-                            <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a href="news-details.html">قراءة المزيد <i class="icon-arrow-right-1"></i></a>
-                                <a href="#"><i class="fal fa-share-alt"></i></a>
-                            </div>
-                        </div>
-                        <div class="future-elem">
-                            <p>Idea</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="150">
-                    <div class="single-blog-card style-3">
-                        <div class="blog-featured-thumb bg-cover" style="background-image: url('assets/img/home5/card_03.png')"></div>
-                        <div class="content">
-                            <div class="post-top-meta d-flex flex-wrap align-items-center">
-                                <div class="post-date">
-                                    <a href="#"><i class="fal fa-calendar-alt"></i>18 Jan 2022</a>
-                                </div>
-                                <div class="post-comment">
-                                    {% comment %} <a href="#"><i class="icon-message"></i>02 Comments</a> {% endcomment %}
-                                </div>
-                            </div>
-                            <h3><a href="news-details.html">Web Development</a></h3>
-                            <div class="excerpt">
-                                <p>Lorem ipsum dolor sitconsectetur adipiscing eiusmod tempor.</p>
-                            </div>
-                            <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a href="news-details.html">قراءة المزيد <i class="icon-arrow-right-1"></i></a>
-                                <a href="#"><i class="fal fa-share-alt"></i></a>
-                            </div>
-                        </div>
-                        <div class="future-elem">
-                            <p>Software</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+               
             </div>
         </div>
     </section>

@@ -55,5 +55,5 @@ class NewsAdmin(ModelAdmin,ImportExportModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(ModelAdmin,ImportExportModelAdmin):
-    list_display = ('name', 'slug')
-    prepopulated_fields = {"slug": ("name",)}  # يملأ الـ slug تلقائياً من الاسم
+    list_display = ('name',)
+    # prepopulated_fields = {"slug": ("name",)}  # يملأ الـ slug تلقائياً من الاسم

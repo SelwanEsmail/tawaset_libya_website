@@ -11,7 +11,8 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
-
+    
+   
     class Meta:
         verbose_name = "مشروع"
         verbose_name_plural = "المشاريع"
@@ -20,14 +21,14 @@ class Project(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name="اسم التصنيف")
-    slug = models.SlugField(max_length=120, unique=True, verbose_name="الرابط")
+    # slug = models.SlugField(max_length=120, unique=True, verbose_name="الرابط")
 
     def __str__(self):
         return self.name
 
     class Meta:
         verbose_name = "تصنيف"
-        verbose_name_plural = "التصنيفات"
+        # verbose_name_plural = "التصنيفات"
 class News(models.Model):
     title = models.CharField(max_length=255, verbose_name="عنوان الخبر")
     description = RichTextField(verbose_name="وصف الخبر") # السطر الجديد

@@ -47,6 +47,75 @@
       {% comment %} <link rel="stylesheet" href="{% static 'assets/css/rtl-main.css' %}" /> {% endcomment %}
            <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     {% endif %}
+
+    <style>
+        .footer-4 {
+            padding: 0 !important;
+        }
+      .footer-4 .footer-bottom-content a:hover{
+        cursor: pointer !important;
+          color: var(--secondary_color) !important;
+        }
+        :root{
+        --main_color : #0A3A6A;
+        --secondary_color:#F99329;
+        --third-color:#F8F0E5;
+        }
+        .show_more{
+            background-color: var(--secondary_color) !important;
+            color: white !important;
+        }
+        .cta-banner.style-3 .container-fluid{
+            background-color: var(--secondary_color) !important;
+        }
+        .cta-banner.style-3 .container-fluid:hover{
+            background-color: var(--third-color) !important;
+        }
+        .my_service{
+            max-height: 380px;
+            min-height: 380px;
+        }
+       .about-wrapper .about-content .text::after {
+            clear: both;
+            transition: all 0.4s ease-in-out;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            content: "\f058";
+            font-family: "Font Awesome 5 Pro";
+            color: var(--secondary_color);
+            font-weight: 600;
+            }
+             .footer-4 .social-link a
+                {
+                    cursor: pointer;
+                   
+                }
+            
+                .footer-4 .social-link a:hover
+                {
+                    cursor: pointer !important;
+                    color: white !important;
+                    background-color: var(--secondary_color);
+                }
+              .footer-4 .single-footer-wid ul li > a:hover{
+                cursor:  pointer !important;
+                    color: var(--secondary_color) !important;
+              }
+              #scrollUp{
+                background-color: var(--secondary_color) !important;
+              }
+              .recent_post_widget .recent-post-list .single-recent-post .post-data span:hover{
+                color: var(--secondary_color) !important;
+
+              }
+              .footer-4 .recent_post_widget .recent-post-list .single-recent-post .post-data a:hover{
+                color: var(--secondary_color) !important;
+              }
+              .footer-bottom{
+                background-color: var(--third-color);
+              }
+    </style>
     
 </head>
 
@@ -182,12 +251,12 @@
                     <div class="header-menu d-none d-xl-block">
                         <div class="main-menu">
                             <ul>
-                               <li><a href="#home">{% trans "Home" %}</a></li>
+                               <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
                                 {% comment %} <li><a href="#about-us">{% trans "About" %}</a></li> {% endcomment %}
                                 <li><a href="{% url 'news'%}">{% trans "news" %}</a></li>
-                                <li><a href="#pricing">{% trans "Projects" %}</a></li>
+                                <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
                                 <li><a href="#testimonial">{% trans "why us" %}</a></li>
-                                <li><a href="#blog">{% trans "Contact" %}</a></li>
+                                <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -267,57 +336,42 @@
                             </div>
                         </div>
                     </div> <!-- /.col-lg-3 - single-footer-wid -->
-                   <div class="col-md-6 col-xl-2 col-12">
-                        <div class="single-footer-wid">
-                            <div class="wid-title">
+                   <div class="col-md-6 col-xl-3 col-12">
+                        <div class="single-footer-wid" style="text-align: center;">
+                            <div class="wid-title" style="display: flex;justify-content: center;">
                                 <h4>{% trans "Company" %}</h4>
                             </div>
                             <ul>
                                 <li><a href="about.html">{% trans "About Us" %}</a></li>
                                 <li><a href="about.html">{% trans "Company History" %}</a></li>
-                                <li><a href="contact.html">{% trans "Need a Career" %}</a></li>
+                                <li><a href="{% url 'contact_us' %}">{% trans "Need a Career" %}</a></li>
                                 <li><a href="project-details.html">{% trans "Working Process" %}</a></li>
                                 <li><a href="news.html">{% trans "Blog Post" %}</a></li>
                             </ul>
                         </div>
                     </div> <!-- /.col-lg-3 - single-footer-wid -->
                  {% load i18n %}
-
-                        <div class="col-md-6 col-xl-2 col-12">
-                            <div class="single-footer-wid">
-                                <div class="wid-title">
-                                    <h4>{% trans "Useful Link" %}</h4>
-                                </div>
-                                <ul>
-                                    <li><a href="about.html">{% trans "About Us" %}</a></li>
-                                    <li><a href="about.html">{% trans "Company History" %}</a></li>
-                                    <li><a href="contact.html">{% trans "Need a Career" %}</a></li>
-                                    <li><a href="project-details.html">{% trans "Working Process" %}</a></li>
-                                    <li><a href="news.html">{% trans "Blog Post" %}</a></li>
-                                </ul>
-                            </div>
-                        </div> <!-- /.col-lg-3 - single-footer-wid -->
                
-                        <div class="col-md-6 col-xl-3 col-12">
+                        <div class="col-md-6 col-xl-6 col-12">
                             <div class="single-footer-wid recent_post_widget">
                                 <div class="wid-title">
                                     <h4>{% trans "News & Article" %}</h4>
                                 </div>
                                 <div class="recent-post-list">
-                                    <div class="single-recent-post">
-                                        <div class="thumb bg-cover" style="background-image: url('assets/img/techex-landing-page/article1.jpg');"></div>
+                                      {% for news in latest_news|dictsortreversed:'created_at'|slice:':2' %}
+                                         <div class="single-recent-post">
+                                        <div class="thumb bg-cover" style="background-image: url({% if news.get_first_image %}
+                                                {{ news.get_first_image }}
+                                            {% else %}
+                                                {% static 'images/no-image.jpg' %}
+                                            {% endif %})"></div>
                                         <div class="post-data">
-                                            <span><i class="fal fa-calendar-alt"></i>{% trans "24th Nov 2020" %}</span>
-                                            <h5><a href="news-details.html">{% trans "User’s Perspes Using Story Structure" %}</a></h5>
+                                            <span><i class="fal fa-calendar-alt"></i>{{ news.created_at|date:'Y-m-d H:i' }}</span>
+                                            <h5><a href="{% url 'news_detail' news.id  %}">{{ news.title }}</a></h5>
                                         </div>
                                     </div>
-                                    <div class="single-recent-post">
-                                        <div class="thumb bg-cover" style="background-image: url('assets/img/techex-landing-page/article2.jpg');"></div>
-                                        <div class="post-data">
-                                            <span><i class="fal fa-calendar-alt"></i>{% trans "15th July 2023" %}</span>
-                                            <h5><a href="news-details.html">{% trans "Optimiz For Assistive Technology Users" %}</a></h5>
-                                        </div>
-                                    </div>
+                                      {% endfor %}
+                                   
                                 </div>
                             </div>
                         </div><!-- /.col-lg-3 - single-footer-wid -->
@@ -326,9 +380,10 @@
         </div>
 
         <div class="footer-bottom">
-            <div class="container text-center">
+            <div class="container text-center" style="direction: ltr;">
                 <div class="footer-bottom-content">
-                    © 2024 <a href="index.html">selwanAboujela</a>. All Rights Reserved
+                    All Rights Reserved
+                    © 2025 <a class="my-account" href="https://www.facebook.com/EngSelwanAboujela/" target="_blank">selwanAboujela</a>. 
                 </div>
             </div>
         </div>
