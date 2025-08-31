@@ -25,6 +25,14 @@
     <section id="blog" class="blog-section blog-wrapper section-padding-3 bg-cover bg-center" style="background-image: url(./assets/img/home5/blog_bg_line.svg);margin-bottom: 50px;">
          <div class="container">
                <div class="row">
+
+                    {% if project %}
+ <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
+    <p>لا توجد مشاريع حاليا </p>
+ </div>
+                     {% else %}
+
+                      {% endif %}
                 {% for project in project_list|dictsortreversed:'created_at' %}
                 <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
                     

@@ -7,7 +7,13 @@ Version: 3.0
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"); */
+body,p,h1mh1,h3,h4,h5,h6 {
+  text-align: right;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif !important;
+ 
+}
 .analytics-wrapper .service-element:hover{
   background-color: var(--secondary_color);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

@@ -20,7 +20,7 @@
       <title>TAWASOT LIBYA </title>
     {% endif %}
 
-<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+<link rel="shortcut icon" href="{% static 'assets/img/fav.png' %}">
 <!-- ===========  All Stylesheet ================= -->
 <!--  Icon css plugins -->
 <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
@@ -49,6 +49,15 @@
     {% endif %}
 
     <style>
+        .lan-select {
+                float: inline-start !important;
+        }
+        .lang_me:hover{
+                 background-color: var(--secondary_color);
+        }
+        .cta-banner.style-3{
+            padding-top: 0 !important;
+        }
         .footer-4 {
             padding: 0 !important;
         }
@@ -74,6 +83,9 @@
         .my_service{
             max-height: 380px;
             min-height: 380px;
+        }
+        .about-wrapper .about-content .text{
+            margin-right: 20px !important;
         }
        .about-wrapper .about-content .text::after {
             clear: both;
@@ -115,6 +127,9 @@
               .footer-bottom{
                 background-color: var(--third-color);
               }
+              .page-banner-wrap{
+                background-image: url('services_it.png');
+              }
     </style>
     
 </head>
@@ -138,20 +153,23 @@
                     <span data-text-preloader="T" class="letters-loading">
                         T
                     </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
                     </span>
-                    <span data-text-preloader="C" class="letters-loading">
-                        C
+                    <span data-text-preloader="W" class="letters-loading">
+                        W
                     </span>
-                    <span data-text-preloader="H" class="letters-loading">
-                        H
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
                     </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
+                    <span data-text-preloader="S" class="letters-loading">
+                        S
                     </span>
-                    <span data-text-preloader="X" class="letters-loading">
-                        X
+                    <span data-text-preloader="O" class="letters-loading">
+                        O
+                    </span>
+                    <span data-text-preloader="T" class="letters-loading">
+                        T
                     </span>
                 </div>
             <p class="text-center">Loading</p>
@@ -189,7 +207,7 @@
                                 <ul>
                                     <li><a href="#"><i class="icon-location-dot"></i>{% trans "شارع عمر المختار، طرابلس، ليبيا" %}</a></li>
                                     <li><a href="mailto:techex@gmail.com"><i class="fal fa-envelope"></i>info@tawasot.ly</a></li>
-                                    <li><a href="tel:+8801700080702"><i class="fal fa-phone"></i>+21891 1234567</a></li>
+                                    <li><a href="tel:+218911521777"><i class="fal fa-phone"></i>091-1521777</a></li>
                                 </ul>
                         </div>
                     </div>
@@ -200,17 +218,25 @@
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-behance"></i></a>
                                 <a href="#"><i class="fab fa-youtube"></i></a>
+                                 <div class="lan-select">
+                                {% load i18n %}
+                                        <form action="{% url 'set_language' %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                            <select name="language" onchange="this.form.submit()">
+                                                {% get_current_language as LANGUAGE_CODE %}
+                                                {% get_available_languages as LANGUAGES %}
+                                                {% for code, name in LANGUAGES %}
+                                                <option value="{{ code }}" {% if code == LANGUAGE_CODE %}selected{% endif %}>
+                                                    {{ name }}
+                                                </option>
+                                                {% endfor %}
+                                            </select>
+                                            </form>
+                                  </div>
                             </div>
                             |
-                            <div class="lan-select">
-                                {% comment %} <form>
-                                    <select id="lan">
-                                        <option>English</option>
-                                        <option>China</option>
-                                        <option>Bangla</option>
-                                        <option>Hindi</option>
-                                    </select>
-                                </form> {% endcomment %}
+                            {% comment %} <div class="lan-select">
                                 {% load i18n %}
                              <form action="{% url 'set_language' %}" method="post">
                                 {% csrf_token %}
@@ -225,7 +251,7 @@
                                     {% endfor %}
                                 </select>
                                 </form>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -250,29 +276,44 @@
                     </div>
                     <div class="header-menu d-none d-xl-block">
                         <div class="main-menu">
+                            {% comment %} <form action="/i18n/setlang/" method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="next" value="/" />
+                                        <button class="btn btn-outline-secondary" type="submit" name="language" value="en">English</button>
+                                        <button class="btn btn-outline-secondary" type="submit" name="language" value="ar">العربية</button>
+                           </form> {% endcomment %}
                             <ul>
                                <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
                                 {% comment %} <li><a href="#about-us">{% trans "About" %}</a></li> {% endcomment %}
-                                <li><a href="{% url 'news'%}">{% trans "news" %}</a></li>
-                                <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
-                                <li><a href="#testimonial">{% trans "why us" %}</a></li>
+                                {% if global_news %}
+                                         <li><a href="{% url 'news'%}">{% trans "news" %}</a></li>
+                                 {% else %}
+                                        <li><a href="#">{% trans "news" %}</a></li>
+                                  {% endif %}
+                                    {% if global_projects %}
+                                        <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+                                 {% else %}
+                                         <li><a href="#">{% trans "Projects" %}</a></li>
+                                  {% endif %}
+                                {% comment %} <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li> {% endcomment %}
+                                {% comment %} <li><a href="#testimonial">{% trans "why us" %}</a></li> {% endcomment %}
                                 <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
+                                {% comment %} <li><a href="{% url 'services' %}">{% trans "servises" %}</a></li> {% endcomment %}
+                                <li>
+                                    
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="header-right d-flex align-items-center">
                         <div class="header-btn-cta">
                             <div class="header-search">
-                                <a class="search-toggle" data-selector=".header-search">
-                                    <span class="fas fa-search"></span>
-                                </a>
-
-                                <form class="search-box" action="#" method="get">
-                                    <div class="form-group d-flex align-items-center">
-                                        <input type="search" name="s" value="" class="search-input" id="search" placeholder="Search">
-                                        <button type="submit" class="search-submit"><i class="icon-search"></i></button>
-                                    </div>
-                                </form>
+                              {% comment %} <form action="/i18n/setlang/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="/" />
+                                <button class="btn btn-outline-secondary lang_me" type="submit" name="language" value="en">English</button>
+                                <button class="btn btn-outline-secondary lang_me" type="submit" name="language" value="ar">العربية</button>
+                            </form> {% endcomment %}
                             </div>
                             {% comment %} <a href="contact.html" class="theme-btn">Consultancy <i class="icon-arrow-right-1"></i></a> {% endcomment %}
                         </div>
@@ -287,22 +328,39 @@
                                         <i class="fal fa-times-circle"></i>
                                     </button>
                                     <nav class="sidebar-nav">
+                                        
                                         <ul class="metismenu" id="mobile-menu">
                                           
-                                                <li><a href="#home">{% trans "Home" %}</a></li>
-                                                <li><a href="#about-us">{% trans "About Us" %}</a></li>
-                                                <li><a href="#services">{% trans "Services" %}</a></li>
-                                                <li><a href="#pricing">{% trans "Pricing" %}</a></li>
-                                                <li><a href="#testimonial">{% trans "Testimonial" %}</a></li>
-                                                <li><a href="#blog">{% trans "Blog" %}</a></li>
+                                                 <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
+                                {% comment %} <li><a href="#about-us">{% trans "About" %}</a></li> {% endcomment %}
+                                <li><a href="{% url 'news'%}">{% trans "news" %}</a></li>
+                                <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+                                {% comment %} <li><a href="#testimonial">{% trans "why us" %}</a></li> {% endcomment %}
+                                <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
                                         </ul>
                                     </nav>
         
                                     <div class="action-bar">
                                             <a href="#"><i class="icon-location-dot"></i>{% trans "55 Clark St, Brooklyn, NY 11201, USA" %}</a>
                                             <a href="mailto:techex@gmail.com"><i class="fal fa-envelope-open-text"></i>techex@gmail.com</a>
-                                            <a href="tel:123-456-7890"><i class="fal fa-phone"></i>+ 88 ( 9800 ) 6802</a>
-                                            <a href="contact.html" class="d-btn theme-btn black">{% trans "Consultancy" %} <i class="icon-arrow-right-1"></i></a>
+                                            <a href="tel:091-1521777"><i class="fal fa-phone"></i>+ 88 ( 9800 ) 6802</a>
+                                             <div class="lan-select">
+                                                {% load i18n %}
+                                            <form action="{% url 'set_language' %}" method="post">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="next" value="{{ request.path }}">
+                                                <select name="language" onchange="this.form.submit()">
+                                                    {% get_current_language as LANGUAGE_CODE %}
+                                                    {% get_available_languages as LANGUAGES %}
+                                                    {% for code, name in LANGUAGES %}
+                                                    <option value="{{ code }}" {% if code == LANGUAGE_CODE %}selected{% endif %}>
+                                                        {{ name }}
+                                                    </option>
+                                                    {% endfor %}
+                                                </select>
+                                                </form>
+                                            </div>
+                                            {% comment %} <a href="contact.html" class="d-btn theme-btn black">{% trans "Consultancy" %} <i class="icon-arrow-right-1"></i></a> {% endcomment %}
                                     </div>
                                 </div>                            
                             </div>
@@ -318,35 +376,55 @@
    {% endblock %}
 
 
-    <footer class="footer-4 footer-wrap">
+    <footer class="footer-4 footer-wrap" style="margin-top: 0;">
         <div class="footer-widgets">            
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-md-6 col-xl-3 col-12 pr-xl-4">
                       <div class="single-footer-wid site_footer_widget">
                             <a href="index.html">
-                                <img src="{% static 'img/logo-2.png' %}" alt="">
+                                  <img src="{% static 'logo.png' %}" alt="">
                             </a>
-                            <p class="mt-4">{% trans "Sed ut perspiciatis unde omnis natus voluptatem accusa ntiumy doloremque laudantium.omnis natus voluptatem accusa ntiumy doloremque laudantium" %}</p>
+                            <p class="mt-4">{% trans "vision" %}</p>
                             <div class="social-link mt-30">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-behance"></i></a>
                                 <a href="#"><i class="fab fa-youtube"></i></a>
+                                 {% comment %} <div class="lan-select">
+                                {% load i18n %}
+                             <form action="{% url 'set_language' %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.path }}">
+                                <select name="language" onchange="this.form.submit()">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% for code, name in LANGUAGES %}
+                                    <option value="{{ code }}" {% if code == LANGUAGE_CODE %}selected{% endif %}>
+                                        {{ name }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                </form>
+                            </div> {% endcomment %}
+                                
                             </div>
                         </div>
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
+                    </div> 
+                    <!-- /.col-lg-3 - single-footer-wid -->
                    <div class="col-md-6 col-xl-3 col-12">
                         <div class="single-footer-wid" style="text-align: center;">
                             <div class="wid-title" style="display: flex;justify-content: center;">
                                 <h4>{% trans "Company" %}</h4>
                             </div>
                             <ul>
-                                <li><a href="about.html">{% trans "About Us" %}</a></li>
-                                <li><a href="about.html">{% trans "Company History" %}</a></li>
-                                <li><a href="{% url 'contact_us' %}">{% trans "Need a Career" %}</a></li>
-                                <li><a href="project-details.html">{% trans "Working Process" %}</a></li>
-                                <li><a href="news.html">{% trans "Blog Post" %}</a></li>
+                                <li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
+                                {% comment %} <li><a href="#about-us">{% trans "About" %}</a></li> {% endcomment %}
+                                <li><a href="{% url 'news'%}">{% trans "news" %}</a></li>
+                                <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+                                {% comment %} <li><a href="#testimonial">{% trans "why us" %}</a></li> {% endcomment %}
+                                <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
+                            </ul>
                             </ul>
                         </div>
                     </div> <!-- /.col-lg-3 - single-footer-wid -->
@@ -358,7 +436,8 @@
                                     <h4>{% trans "News & Article" %}</h4>
                                 </div>
                                 <div class="recent-post-list">
-                                      {% for news in latest_news|dictsortreversed:'created_at'|slice:':2' %}
+                                        {% if latest_news %}
+                                                   {% for news in latest_news|dictsortreversed:'created_at'|slice:':2' %}
                                          <div class="single-recent-post">
                                         <div class="thumb bg-cover" style="background-image: url({% if news.get_first_image %}
                                                 {{ news.get_first_image }}
@@ -371,6 +450,10 @@
                                         </div>
                                     </div>
                                       {% endfor %}
+                                         {% else %}
+                                            <p>لا توجد اخبار حاليا</p>
+                                          {% endif %}
+                                    
                                    
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import News,Project
+from .models import News,Project,Category
 from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
@@ -7,12 +7,14 @@ from django.contrib import messages
 # Create your views here.
 def home_page(request):
     latest_news = News.objects.all()[:3]
-    return render(request,'index.html',{'latest_news': latest_news})
+    project_list = Project.objects.all()
+    return render(request,'index.html',{'latest_news': latest_news,'project_list' :project_list})
 
 def news(request):
     news_list = News.objects.all().order_by('-created_at')  # ترتيب تنازلي حسب تاريخ النشر
+    categories = Category.objects.all()       
     latest_news = News.objects.order_by('-created_at')[:3]
-    return render(request, 'news.html', {'news_list': news_list,'latest_news': latest_news})
+    return render(request, 'news.html', {'news_list': news_list,'latest_news': latest_news,'categories':categories})
 
 def projects(request):
     latest_news = News.objects.order_by('-created_at')[:3]
@@ -29,6 +31,17 @@ def news_detail(request, pk):
 def contact_us(request):
     latest_news = News.objects.order_by('-created_at')[:3]
     return render(request, 'contact.html', {'latest_news': latest_news})
+
+def services(request):
+    latest_news = News.objects.order_by('-created_at')[:3]
+    return render(request, 'services.html', {'latest_news': latest_news})
+
+def news_by_category(request, category_id):
+    category = Category.objects.get(id=category_id)
+    news_list = News.objects.filter(category=category)
+    categories = Category.objects.all()       
+    latest_news = News.objects.order_by('-created_at')[:3]
+    return render(request, 'news.html', {'news_list': news_list, 'categories': categories,'latest_news':latest_news})
 
 def contact_form(request):
     print('----------------------------------------------------- test -----------------')

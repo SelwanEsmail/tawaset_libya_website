@@ -9,7 +9,7 @@
             <div class="row align-items-center">
                 <div class="col-md-12 col-lg-6">
                     <div class="banner-content">
-                        <h2 data-aos="fade-up">{% trans "شركة تواسط ليبيا للحلول والخدمات التقنية" %}</h2>
+                        <h2 data-aos="fade-up">{% trans "Digital analytics and technical consultations that drive your business growth" %}</h2>
                         <span>tawasot</span>
                         
                         {% comment %} <a data-aos="fade-up" data-aos-delay="100" href="contact.html" class="theme-btn mt-40">Discover More <i class="icon-arrow-right-1"></i></a> {% endcomment %}
@@ -18,6 +18,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="banner-img">
                        <img src="{% static 'assets/img/banner_01.png' %}" alt="">
+                       {% comment %} <img src="{% static 'logo.png' %}" alt=""> {% endcomment %}
                     </div>
                 </div>
             </div>
@@ -34,27 +35,7 @@
             </div>
     </section>
 
-    {% comment %} <div class="client-brand-logo-wrap techex-landing-page  section-padding-3 bg-white">
-        <div class="container">
-            <div class="brand-carousel-active d-flex justify-content-between owl-carousel">
-               <div class="single-client">
-                        <img src="{% static 'assets/img/brand/4.png' %}" alt="">
-                    </div>
-                    <div class="single-client">
-                        <img src="{% static 'assets/img/brand/b4.png' %}" alt="">
-                    </div>
-                    <div class="single-client">
-                        <img src="{% static 'assets/img/brand/2.png' %}" alt="">
-                    </div>
-                    <div class="single-client">
-                        <img src="{% static 'assets/img/brand/1.png' %}" alt="">
-                    </div>
-                    <div class="single-client">
-                        <img src="{% static 'assets/img/brand/3.png' %}" alt="">
-                    </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
+   
 
     <section id="about-us" class="about-wrapper" style="margin-top: 70px;">
         <div class="container">
@@ -62,7 +43,7 @@
                 <div class="col-md-12 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                    
                     <div class="about-img">
-                        <img src="{% static 'assets/img/home5/about_01.png' %}" alt="">
+                        <img src="{% static 'manger_solutuions.png' %}" alt="">
                     </div>
                     <div class="img-element">
                         <img src="{% static 'assets/img/home5/line_dots_01.svg' %}" alt="">
@@ -212,6 +193,7 @@
             </div>
         </div>
         <div class="service__element">
+            {% comment %} <img src="{% static 'img/home5/bg_ser.png' %}" alt=""> {% endcomment %}
             <img src="{% static 'img/home5/bg_ser.png' %}" alt="">
         </div>
     </section>
@@ -276,7 +258,8 @@
         </div>
         <div class="content ml-20">
             <p>{% trans "متواجدون دائماً لخدمتك على الرقم" %}</p>
-            <h4 style="direction: ltr;">091-1234567</h4>
+            <h4 style="direction: ltr;">091-1521777
+</h4>
         </div>
     </div>
 </div>
@@ -288,79 +271,6 @@
         </div>
     </section>
 
-    {% comment %} <section id="testimonial" class="agent__wrapper section-padding-3 bg-center bg-cover" style="background-image: url(./assets/img/home5/bg_01.png);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-8 col-lg-5">
-                    <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
-                        <h6><img src="{% static 'assets/img/home5/bage.svg' %}" alt>Testimonials</h6>
-                        <h2>What people say About Techex</h2>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="agent-element owl-carousel mt-30">
-                        <div class="agent-item">
-                            <div class="agent-content d-flex align-items-center">
-                                <div class="agent-img bg-center bg-cover" style="background-image: url(./assets/img/home5/man.png);"></div>
-                                <div class="agent-content_name">
-                                    <h4>Elizabeth Linda</h4>
-                                    <p>Company Manager</p>
-                                </div>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                          {% load static %}
-
-                                <div class="quera">
-                                    <img src="{% static 'assets/img/home5/quote.svg' %}" alt="">
-                                </div>
-                                <div class="agent-logo">
-                                    <img src="{% static 'assets/img/home5/co_01.svg' %}" alt="">
-                                </div>
-
-                        </div>
-                        <div class="agent-item">
-                            <div class="agent-content d-flex align-items-center">
-                                <div class="agent-img bg-center bg-cover" style="background-image: url(./assets/img/home5/woman.png);"></div>
-                                <div class="agent-content_name">
-                                    <h4>Elizabeth Linda</h4>
-                                    <p>Company Manager</p>
-                                </div>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            {% load static %}
-
-                            <div class="quera">
-                                <img src="{% static 'assets/img/home5/quote.svg' %}" alt="">
-                            </div>
-                            <div class="agent-logo">
-                                <img src="{% static 'assets/img/home5/co_02.svg' %}" alt="">
-                            </div>
-
-                        </div>
-                        <div class="agent-item">
-                            <div class="agent-content d-flex align-items-center">
-                                <div class="agent-img bg-center bg-cover" style="background-image: url('{% static 'assets/img/home5/man.png' %}');"></div>
-                                <div class="agent-content_name">
-                                    <h4>Elizabeth Linda</h4>
-                                    <p>Company Manager</p>
-                                </div>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                          {% load static %}
-
-                                <div class="quera">
-                                    <img src="{% static 'assets/img/home5/quote.svg' %}" alt="">
-                                </div>
-                                <div class="agent-logo">
-                                    <img src="{% static 'assets/img/home5/co_01.svg' %}" alt="">
-                                </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> {% endcomment %}
 <!-------------------------- Packaging------------------------------->
     {% comment %} <section id="pricing" class="price__wrapper section-padding-3">
         <div class="container">
@@ -490,18 +400,18 @@
                                     <a href="#"><i class="icon-message"></i>02 Comments</a>
                                 </div> {% endcomment %}
                             </div>
-                            <h3 style="max-height: 85px; min-height: 85px;overflow: hidden;"><a href="news-details.html">{{ news.title }}</a></h3>
+                            <h3 style="max-height: 85px; min-height: 85px;overflow: hidden;"><a href="{% url 'news_detail' news.id %}">{{ news.title }}</a></h3>
                             <div class="excerpt" style="max-height: 64px; overflow: hidden;">
                                 <p>{{news.description |safe}}</p>
                             </div>
                             <div class="btn-link-share d-flex justify-content-between align-items-center">
-                                <a class="show_more" href="news-details.html">{% trans 'read more' %}<i class="icon-arrow-right-1"></i></a>
+                                <a class="show_more" href="{% url 'news_detail' news.id %}">{% trans 'read more' %}<i class="icon-arrow-right-1"></i></a>
                                 {% comment %} <a href="#"><i class="fal fa-share-alt"></i></a> {% endcomment %}
                             </div>
                             
                         </div>
                         <div class="future-elem">
-                            <p>Technology</p>
+                            <p>{{news.category.name}}</p>
                         </div>
                     </div>
                 </div>
@@ -516,6 +426,7 @@
            {% load i18n %}
 
 <div class="cta-content">
+   
     <div class="row align-items-center">
         <div class="col-xl-7 text-white col-12 text-center text-xl-left">
             <h1>

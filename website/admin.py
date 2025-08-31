@@ -3,11 +3,30 @@ from .models import Project
 from .models import News, NewsMedia,Category
 # news/admin.py
 from django.utils.html import format_html
+
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
+from django.contrib.auth.models import User, Group
+
+from unfold.forms import AdminPasswordChangeForm, UserChangeForm, UserCreationForm
 from unfold.admin import ModelAdmin
 
-from unfold.admin import ModelAdmin
+
 from import_export.admin import ImportExportModelAdmin
 from unfold.contrib.import_export.forms import ExportForm, ImportForm, SelectableFieldsExportForm
+
+
+
+admin.site.unregister(User)
+
+
+
+@admin.register(User)
+class UserAdmin(BaseUserAdmin, ModelAdmin):
+    # Forms loaded from `unfold.forms`
+    form = UserChangeForm
+    add_form = UserCreationForm
+    change_password_form = AdminPasswordChangeForm
 
 
 
@@ -27,7 +46,7 @@ class NewsMediaInline(admin.TabularInline):
 @admin.register(News)
 class NewsAdmin(ModelAdmin,ImportExportModelAdmin):
 
-    list_display = ('title', 'created_at')
+    list_display = ('title', 'category','created_at')
     search_fields = ('title', 'description')
     list_filter = ('author', 'created_at')
     inlines = [NewsMediaInline]

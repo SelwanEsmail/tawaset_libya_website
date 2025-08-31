@@ -29,134 +29,170 @@
       </div>
     </div>
   </section>
-
-  <section class="blog-wrapper news-wrapper section-padding">
-    <div class="container">
+    {% if news_list %}
+   <section class="blog-wrapper news-wrapper section-padding">
+    <div class="cont" style="padding: 40px;">
       <div class="row">
-        <div class="col-12 col-lg-8">
-          <div class="blog-posts">
-            <div class="single-blog-post">
-             
-              {% for news in news_list %}
-               <div class="post-featured-thumb bg-cover" style="background-image: url({% if news.get_first_image %}
-                        {{ news.get_first_image }}
-                      {% else %}
-                        {% static 'images/no-image.jpg' %}
-                      {% endif %})">
-                {% comment %} {% with first_media=news.media.first %}
-                  <div class="post-featured-thumb bg-cover" style="background-image: url('{{ first_media.file.url }}')"></div>
-                {% endwith %} {% endcomment %}
-              </div>
-                <div style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px">
-                  <div class="post-content">
-                    <h2 class="title_news"><a class="title_news" href="{% url 'news_detail' news.id %}" style="text-decoration: none;">{{ news.title }}</a></h2>
-                    <div class="post-meta">
-                      {% comment %} <span><i class="fal fa-eye"></i>232 Views</span> {% endcomment %}
-                      {% comment %} <span><i class="fal fa-comments"></i>35 Comments</span> {% endcomment %}
-                      <span>
-                        <i class="fal fa-calendar-alt"></i>
-
-                        {{ news.created_at|date:'Y-m-d H:i' }}
-                      </span>
-                    </div>
-                    <p>{{ news.description|safe }}</p>
-                    <div class="d-flex justify-content-between align-items-center mt-30">
-                      <div class="author-info" style="display: flex;align-items: center;">
-                        <div class="author-img" style="width: 25px;height: 25px;margin: 5px;background-image: url('{% static 'assets/img/blog/user.png' %}');"></div>
-                        <h5>{{ news.author.username }}</h5>
-                      </div>
-                      <div class="post-link">
-                        <a class="read_more_news" href="{% url 'news_detail' news.id %}"><i class="fal fa-arrow-right"></i> {% trans 'Read More' %}</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              {% empty %}
-                <p>لا توجد أخبار حالياً.</p>
-              {% endfor %}
-
-            </div>
-          </div>
-          <div class="page-nav-wrap mt-60 text-center" style="margin-top: 25px;margin-bottom: 25px;">
-            <ul>
-              <li>
-                <a href="#"><i class="fal fa-long-arrow-left"></i></a>
-              </li>
-              <li>
-                <a href="#">01</a>
-              </li>
-              <li>
-                <a href="#">02</a>
-              </li>
-              <li>
-                <a href="#">..</a>
-              </li>
-              <li>
-                <a href="#">10</a>
-              </li>
-              <li>
-                <a href="#">11</a>
-              </li>
-              <li>
-                <a href="#"><i class="fal fa-long-arrow-right"></i></a>
-              </li>
-            </ul>
-          </div>
-          <!-- /.col-12 col-lg-12 -->
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="main-sidebar">
-            <div class="single-sidebar-widget">
-              <div class="wid-title">
-                <h3>{% trans 'Popular Feeds' %}</h3>
-              </div>
-
-              {% for news in latest_news|dictsortreversed:'created_at'|slice:':3' %}
-                <div class="popular-posts">
-                  <div class="single-post-item">
-                    <div class="thumb bg-cover"
-                      style="background-image: url({% if news.get_first_image %}
+       
+           <div class="col-12 col-lg-9">
+            <div class="blog-posts">
+              <div class="row">
+                {% for news in news_list %}
+                <div class="col-xl-4 col-md-6 col-12" data-aos="fade-up">
+                    <div class="single-blog-card style-3" style="height: 520px;">
+                        <div class="blog-featured-thumb bg-cover" style="background-image: url({% if news.get_first_image %}
                         {{ news.get_first_image }}
                       {% else %}
                         {% static 'images/no-image.jpg' %}
                       {% endif %})"></div>
+                        <div class="content">
+                            <div class="post-top-meta d-flex flex-wrap align-items-center">
+                                <div class="post-date">
+                                    <a href="#"><i class="fal fa-calendar-alt"></i>{{ news.created_at|date:'Y-m-d H:i' }}</a>
+                                </div>
+                                {% comment %} <div class="post-comment">
+                                    <a href="#"><i class="icon-message"></i>02 Comments</a>
+                                </div> {% endcomment %}
+                            </div>
+                            <h3 style="max-height: 85px; min-height: 85px;overflow: hidden;"><a href="{% url 'news_detail' news.id %}">{{ news.title }}</a></h3>
+                            <div class="excerpt" style="max-height: 64px; overflow: hidden;">
+                                <p>{{news.description |safe}}</p>
+                            </div>
+                            <div class="btn-link-share d-flex justify-content-between align-items-center">
+                                <a class="show_more" href="{% url 'news_detail' news.id %}">{% trans 'read more' %}<i class="icon-arrow-right-1"></i></a>
+                                {% comment %} <a href="#"><i class="fal fa-share-alt"></i></a> {% endcomment %}
+                            </div>
+                            
+                        </div>
+                        <div class="future-elem">
+                            <p>{{news.category.name}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+               
+            </div>
+              {% comment %} <div class="single-blog-post">
+                {% for news in news_list %}
+                  <div class="post-featured-thumb bg-cover"
+                    style="background-image: url({% if news.get_first_image %}
+                      {{ news.get_first_image }}
+                    {% else %}
+                      {% static 'images/no-image.jpg' %}
+                    {% endif %})"></div>
+                  <div style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px">
                     <div class="post-content">
-                      <h5><a href="{% url 'news_detail' news.id %}">{{ news.title }}</a></h5>
-                      <div class="post-date">
-                        <i class="far fa-calendar-alt"></i> {{ news.created_at|date:'Y-m-d H:i' }}
+                      <h2 class="title_news"><a class="title_news" href="{% url 'news_detail' news.id %}" style="text-decoration: none;">{{ news.title }}</a></h2>
+                      <div class="post-meta">
+                        <span>
+                          <i class="fal fa-calendar-alt"></i>
+
+                          {{ news.created_at|date:'Y-m-d H:i' }}
+                        </span>
+                      </div>
+                      <p>{{ news.description|safe }}</p>
+                      <div class="d-flex justify-content-between align-items-center mt-30">
+                        <div class="author-info" style="display: flex;align-items: center;">
+                          <div class="author-img" style="width: 25px;height: 25px;margin: 5px;background-image: url('{% static 'assets/img/blog/user.png' %}');"></div>
+                          <h5>{{ news.author.username }}</h5>
+                        </div>
+                        <div class="post-link">
+                          <a class="read_more_news" href="{% url 'news_detail' news.id %}"><i class="fal fa-arrow-right"></i> {% trans 'Read More' %}</a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              {% endfor %}
-
-              {% comment %} <div class="popular-posts">
-                <div class="single-post-item">
-                  <div class="thumb bg-cover" style="background-image: url('assets/img/blog/pp1.jpg')"></div>
-                  <div class="post-content">
-                    <h5><a href="news-details.html">Lorem ipsum dolor sit cing elit, sed do.</a></h5>
-                    <div class="post-date">
-                      <i class="far fa-calendar-alt"></i>24th March 2019
-                    </div>
-                  </div>
-                </div>
+                {% empty %}
+                  <p>لا توجد أخبار حالياً.</p>
+                {% endfor %}
               </div> {% endcomment %}
             </div>
-            <div class="single-sidebar-widget">
-              <div class="wid-title">
-                <h3>{% trans 'Categories' %}</h3>
+            {% comment %} <div class="page-nav-wrap mt-60 text-center" style="margin-top: 25px;margin-bottom: 25px;">
+              <ul>
+                <li>
+                  <a href="#"><i class="fal fa-long-arrow-left"></i></a>
+                </li>
+                <li>
+                  <a href="#">01</a>
+                </li>
+                <li>
+                  <a href="#">02</a>
+                </li>
+                <li>
+                  <a href="#">..</a>
+                </li>
+                <li>
+                  <a href="#">10</a>
+                </li>
+                <li>
+                  <a href="#">11</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fal fa-long-arrow-right"></i></a>
+                </li>
+              </ul>
+            </div> {% endcomment %}
+            
+          </div> 
+          
+            
+          <div class="col-12 col-lg-3">
+            <div class="main-sidebar">
+              <div class="single-sidebar-widget">
+                <div class="wid-title">
+                  <h3>{% trans 'Popular Feeds' %}</h3>
+                </div>
+
+                {% for news in latest_news|dictsortreversed:'created_at'|slice:':3' %}
+                  <div class="popular-posts">
+                    <div class="single-post-item">
+                      <div class="thumb bg-cover"
+                        style="background-image: url({% if news.get_first_image %}
+                          {{ news.get_first_image }}
+                        {% else %}
+                          {% static 'images/no-image.jpg' %}
+                        {% endif %})"></div>
+                      <div class="post-content">
+                        <h5><a href="{% url 'news_detail' news.id %}">{{ news.title }}</a></h5>
+                        <div class="post-date">
+                          <i class="far fa-calendar-alt"></i> {{ news.created_at|date:'Y-m-d H:i' }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+
               </div>
-              <div class="widget_categories">
-                <ul>
-                  <li>
-                    <a href="news.html">Consultant <span>23</span></a>
-                  </li>
-                </ul>
+              <div class="single-sidebar-widget">
+                <div class="wid-title">
+                  <h3>{% trans 'Categories' %}</h3>
+                </div>
+                   {% for category in categories %}
+                <div class="widget_categories">
+                  <ul>
+                    <li>
+                      <a href="{% url 'news_by_category' category.id %}">{{category.name}}</a>
+                    </li>
+                  </ul>
+                </div>
+                 {% endfor %}
               </div>
             </div>
           </div>
-        </div>
+       
+      </div>
+    </div>
+  </section> 
+     {% else %}
+           <section class="blog-wrapper news-wrapper section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-12" style="display: flex;justify-content: center;">
+            <p>لا توجد أخبار لعرضها حالياً. 😥</p>
+          </div>
       </div>
     </div>
   </section>
+    {% endif %}
+
 {% endblock %}

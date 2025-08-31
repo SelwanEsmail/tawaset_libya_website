@@ -27,7 +27,8 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "تصنيف"
+        verbose_name = "التصنيفات"
+        verbose_name_plural = "التصنيفات"
         # verbose_name_plural = "التصنيفات"
 class News(models.Model):
     title = models.CharField(max_length=255, verbose_name="عنوان الخبر")
@@ -50,6 +51,8 @@ class News(models.Model):
     class Meta:
         verbose_name = "خبر"
         verbose_name_plural = "الأخبار"
+
+
 
 class NewsMedia(models.Model):
     news = models.ForeignKey(News, related_name='media', on_delete=models.CASCADE)
